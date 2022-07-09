@@ -1,10 +1,12 @@
 const { DateTime } = require('luxon')
 const navigationPlugin = require('@11ty/eleventy-navigation')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = (config) => {
   config.addPlugin(navigationPlugin);
   config.addPlugin(rssPlugin);
+  config.addPlugin(syntaxHighlight);
 
   config.addPassthroughCopy('css');
   config.addPassthroughCopy('static');
@@ -41,5 +43,6 @@ module.exports = (config) => {
     return tagList.sort((a, b) => b.tagCount - a.tagCount)
 
   });
+
 
 }
