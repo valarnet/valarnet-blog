@@ -24,19 +24,19 @@ There are only a few steps to it:
 
 **Step 1.** Navigate to **Monitoring > Alerting** or just type "alert" in the search bar at the top middle of the screen.
 
-![](/static/img/image-22-733x1024.png)
+![](/static/img/image-22.png)
 
 **Step 2.** Create policy
 
-![](/static/img/image-23-1024x376.png)
+![](/static/img/image-23.png)
 
 **Step 3.** **Select a metric > VM Instance > Instance > Uptime Total**. Then click **Apply**
 
-![](/static/img/image-24-1024x529.png)
+![](/static/img/image-24.png)
 
 **Step 4.** Change the "Transform data" if you like but for me, the defaults work fine for this. Scroll down and click **Next**
 
-![](/static/img/image-25-1024x564.png)
+![](/static/img/image-25.png)
 
 **Step 5.** For the alert trigger configuration, set the threshold you want to be notified at. Threshold value is in milliseconds.
 
@@ -48,25 +48,25 @@ It's not required but change the "Condition Name" if you wish to.
 
 Click **"Create Policy"**
 
-![](/static/img/image-26-1024x564.png)
+![](/static/img/image-26.png)
 
 **Step 6.** Next set up how you want to be notified. There are a variety of ways. For me, I'd like to get an email and SMS message alert. When you click in the "Notification channels" box, it gives you the options to manage these.
 
-![](/static/img/image-28-1024x564.png)
+![](/static/img/image-28.png)
 
 **Step 7.** Follow the **"Manage Notifications Channels"** It opens in a new tab - which is nice (small details like this make the user experience!).
 
 If you scroll a little bit lower, you should see the options listed.
 
-![](/static/img/image-29-1024x571.png)
+![](/static/img/image-29.png)
 
 It is self-explanatory what needs to be done here. Follow the **"ADD NEW"** buttons for all the means of notification you want and set yourself up.
 
 > I find it odd that it doesn't ask me to confirm the email address but asks to confirm the phone number. Does this mean I can email spam whoever I want with alerts?
 
-![](/static/img/image-30-300x189.png)
+![](/static/img/image-30.png)
 
-![](/static/img/image-31-300x237.png)
+![](/static/img/image-31.png)
 
 **Step 8.** Return to the browser tab you were on in **Step 6** where the **"Configure notifications and finalize alert"** is. Click the **refresh icon** to the left of "Manage Notification Channels"
 
@@ -74,7 +74,7 @@ The Email and SMS channels you created will be available to select. I only did e
 
 Select and click OK
 
-![](/static/img/image-32-1024x566.png)
+![](/static/img/image-32.png)
 
 If you scroll down, there are two fields that need to be filled out.
 
@@ -82,11 +82,11 @@ It's a good idea to put a description on it. Future you will always be thankful 
 
 Click **Next** to review.
 
-![](/static/img/image-33-1024x562.png)
+![](/static/img/image-33.png)
 
 **Step 9.** The review page will appear.
 
-![](/static/img/image-34-1024x564.png)
+![](/static/img/image-34.png)
 
 The red dotted line shows the threshold at which the trigger will fire and a notification sent to you. Notice Google doesn't display the last three zeros 000 here. It took them away from the 10,800,000 milliseconds (i.e. 3 hours I wanted to be alerted on) and shows 10,800.
 

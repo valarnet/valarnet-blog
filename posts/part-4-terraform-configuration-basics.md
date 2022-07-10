@@ -229,16 +229,16 @@ I'm going to layout these steps in detail so even busy people can follow them. I
 
 This is the account Terraform will use to contact the AWS API and execute infrastructure actions .
 
-![](/static/img/image-10.png?w=1024)
+![](/static/img/image-10.png)
 
 - Click on **"Attach existing policies directly"** and select **AdministratorAccess** permissions policy
 - Give it a tag if you desire or click **Next Review**
 
-![](/static/img/image-9.png?w=1024)
+![](/static/img/image-9.png)
 
 - Click **Create user**
 
-![](/static/img/image-8.png?w=1024)
+![](/static/img/image-8.png)
 
 Make a note of the access key and secret key. **You will only be able to access the secret once.** So, make sure to copy and save it in a secure location.
 
@@ -260,7 +260,7 @@ provider "aws" {
 
 It will look something like this:
 
-![](/static/img/image-7.png?w=1024)
+![](/static/img/image-7.png)
 
 **Step 5:** Open up a Terminal application if on MacOS. Alternatively, open Command Prompt or PowerShell if using Windows OS.
 
@@ -272,29 +272,29 @@ ls
 ```
 **Step 7:** Issue a **terraform init** command. Terraform will initialize the _backend_ which we noted is used to store persistent state data. It will look for and install the provider plugins we have specified. Once done, it will tell you that it has successfully initialized.
 
-![](/static/img/image-11.png?w=1024)
+![](/static/img/image-11.png)
 
 **Step 8:** Type **ls** command again. Do you see a difference?
 
 **Step 9:** Next, issue the **terraform plan** command. During this stage, Terraform will plan what to do and propose what it is going to do - how many things it is going to add, change, or destroy. The decision to accept and apply these proposals is yours.
 
-![](/static/img/image-12.png?w=1024)
+![](/static/img/image-12.png)
 
 **Step 10:** Next, do the **terraform apply** command. Terraform asks you one more time to confirm by typing **"yes."** Once you do that, Terraform gets to work and starts making the changes.
 
-![](/static/img/image-13.png?w=1024)
+![](/static/img/image-13.png)
 
 **Step 11:** At this point, head over to AWS management console and check if the VPC has been created. And sure enough. it's there. Look around the AWS console. You will see other resources associated with this VPC implicitly created as part of the process.
 
-![](/static/img/image-6.png?w=1024)
+![](/static/img/image-6.png)
 
 **Step 12:** To delete the newly created VPC, issue **terraform destroy** command. When you want to destroy infrastructure for whatever reason, Terraform essentially screams **"There is no undo"** and asks you to confirm by typing **"yes"** Read line by line what changes it is suggesting to make. Once confirmed, destruction process commences.
 
-![](/static/img/image-14.png?w=1024)
+![](/static/img/image-14.png)
 
 **Step 13:** Head over to AWS management console and verify if the VPC is deleted. The new VPC is gone and only the default VPC remains.
 
-![](/static/img/image-5.png?w=1024)
+![](/static/img/image-5.png)
 
 **Step 14:** Type **ls** command.
 ```bash

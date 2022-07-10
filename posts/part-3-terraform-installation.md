@@ -28,15 +28,15 @@ Download the binary specific to your processor type from [Downloads | Terraform 
 
 If you're going to run terraform on the M1 chip Mac devices, get the arm64 image. Otherwise, grab the amd64 version of the binary.
 
-![](/static/img/image-3-5.png?w=564)
+![](/static/img/image-3-5.png)
 
 You will have a zipped file downloaded:
 
-![](/static/img/image-3-2.png?w=1024)
+![](/static/img/image-3-2.png)
 
 - Extract the downloaded file and you will have the binary file
 
-![](/static/img/image-3.png?w=1024)
+![](/static/img/image-3.png)
 
 - From your terminal application, navigate to the directory where this binary file is located. Move or copy it to /usr/local/bin/
 ```bash
@@ -111,7 +111,7 @@ Again, the installation process on a Windows computer is also straightforward.
 
 On a Windows machine that doesn't have terraform installed, open command prompt, type **terraform** and hit enter. You should see a command unrecognized error.
 
-![](/static/img/image-3-1.png?w=1024)
+![](/static/img/image-3-1.png)
 
 From [Downloads | Terraform by HashiCor](https://www.terraform.io/downloads)p download the executable that matches the processor in your computer
 
@@ -119,31 +119,31 @@ If you are not sure whether your processor type is i386 or Amd64, simply search 
 
 If it says x64-based processor, download the Amd64 version.
 
-![](/static/img/image-3-4.png?w=1024)
+![](/static/img/image-3-4.png)
 
-![](/static/img/image-3-7.png?w=630)
+![](/static/img/image-3-7.png)
 
 Locate and extract this downloaded file to **C:/terraform** folder.
 
-![](/static/img/image-3-11.png?w=1024)
+![](/static/img/image-3-11.png)
 
 In the Start menu, search for **"environment variables"** and click **"Edit the system environment variables"** option.
 
 Click on the **"Environment Variables"** button to open the settings window
 
-![](/static/img/image-3-10.png?w=957)
+![](/static/img/image-3-10.png)
 
 Under "System variables" look for **Path** and click **Edit**
 
-![](/static/img/image-3-6.png?w=1024)
+![](/static/img/image-3-6.png)
 
 In the window that pops up, click **New** to add a new line
 
-![](/static/img/image-3-3.png?w=1024)
+![](/static/img/image-3-3.png)
 
 Add New line "C:\\terraform" to the list.
 
-![](/static/img/image-3-9.png?w=877)
+![](/static/img/image-3-9.png)
 
 Click **OK** a few times and exit out of environment variables.
 
@@ -151,13 +151,13 @@ Open a new command prompt, type terraform, and hit enter.
 
 You should see something like this
 
-![](/static/img/image-3-12.png?w=1010)
+![](/static/img/image-3-12.png)
 
 Take a minute to read through the options. The init, plan, apply, and destroy commands we talked about in previous sections of this series as well as a lot more knobs now exist.
 
 Type terraform -version
 
-![](/static/img/image-3-8.png?w=1024)
+![](/static/img/image-3-8.png)
 
 **Ubuntu**
 
@@ -170,7 +170,7 @@ For installation on Ubuntu, what I recommend is to
 - check your PATH variable with **echo $PATH**, and
 - Move or copy the binary file to **/usr/local/bin/** directory by following the steps we used in the Mac installation section above.
 
-![](/static/img/image-4.png?w=704)
+![](/static/img/image-4.png)
 
 Alternatively, to install Terraform on Ubuntu directly from the HashiCorp repository, make a new directory named terraform under /opt.
 ```bash

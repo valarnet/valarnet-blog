@@ -48,7 +48,7 @@ To illustrate this, let's look at the following practical scenario.
 
 We need to create an AWS infrastructure which is represented by the diagram below:
 
-![](/static/img/image-1024x371.png)
+![](/static/img/image.png)
 
 There are two VPCs: application and database VPCs. Inside each VPC, we have two subnets. **app-subnet-a** hosts resources for one application and **app-subnet-b** hosts resources for a different application. The database counterparts of these applications reside in a different VPC and availability zone.
 
@@ -84,7 +84,7 @@ Finally, once the two VPCs exist, a VPC peering connection needs to be created b
 
 I think flow- and finite-state machine diagrams are cool. So, this is to pictorially represent a simplified version of what it would look like for a VPC and its resources.
 
-![](/static/img/image-1-1024x502.png)
+![](/static/img/image-1.png)
 
 As far as I've seen, AWS and other cloud providers do not describe them as such but it helps me to think of resources as Tier 1, Tier 2, Tier 3, etc.
 
@@ -155,7 +155,7 @@ Let’s start very simple so the descriptions come across clearly and we build u
 
 We zoom in on how to create the VPCs and the subnets inside them.
 
-![](/static/img/image-2-1024x386.png)
+![](/static/img/image-2.png)
 
 **Provisioning parts of the infrastructure**
 
@@ -318,31 +318,31 @@ export AWS_ACCESS_KEY_ID="your_access_key"
 export AWS_SECRET_ACCESS_KEY="your_secret_key"
 export AWS_DEFAULT_REGION="aws_region"
 ```
-![](/static/img/image-4-1024x233.png)
+![](/static/img/image-4.png)
 
 - Then we initialize terraform using **terraform init**. Terraform will initialize, download provider plugins if it needs to do that, and return with a successful message.
 
-![](/static/img/image-5-1024x487.png)
+![](/static/img/image-5.png)
 
 - To plan our terraform deployment, we will use the changing.tfvars file as an input, Terraform reads through the variables and values we defined in changing.tfvars file. Instead of just terraform plan, the command to use will be **terraform plan -var-file=changing.tfvars**
 
-![](/static/img/image-6-1024x641.png)
+![](/static/img/image-6.png)
 
 The partial output will look like in the picture above. Terraform says it will add 6 resources i.e. two VPCs and four subnets. As you run the code, look through the output to see what values it will change.
 
 - To apply the code, we issue **terraform apply -var-file=changing.tfvars** The partial output after a successful apply will return an output similar to the following
 
-![](/static/img/image-7-1024x552.png)
+![](/static/img/image-7.png)
 
 - Check in AWS console and you will see these resources provisioned and named exactly as we wanted them to be.
 
-![](/static/img/image-8-1024x220.png)
+![](/static/img/image-8.png)
 
-![](/static/img/image-9-1024x205.png)
+![](/static/img/image-9.png)
 
 - To destroy the infrastructure, use the command **terraform destroy -var-file=changing.tfvars**
 
-![](/static/img/image-10-1024x485.png)
+![](/static/img/image-10.png)
 
 - They will disappear in the AWS console.
 

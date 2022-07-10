@@ -32,7 +32,7 @@ Let's take a little detour and briefly talk about operating systems. If you are 
 
 Workspaces are a way of creating logical isolation. The windows and applications you run in one workspace will not show up in another. Each workspace continues to maintain its own separate state.
 
-![](/static/img/image.png?w=1012)
+![](/static/img/image.png)
 
 As you read, keep in mind that if/when needed Terraform can employ a somewhat similar concept of workspaces to provide isolation between separate instances of state data.
 
@@ -48,7 +48,7 @@ In later parts of this series, we will see how to modify backend location and en
 
 Pictorially, the terraform lifecycle looks as shown here.
 
-![](/static/img/image-1.png?w=1024)
+![](/static/img/image-1.png)
 
 **What happens during each stage of the lifecycle?**
 
@@ -89,7 +89,7 @@ If you are like [the joker](https://www.youtube.com/watch?v=wbbz9ccZks8), you'll
 
 The basic architecture diagram below encapsulates the components involved and the actions we outlined above in the different stages of the Terraform lifecycle.
 
-![](/static/img/image-2.png?w=1024)
+![](/static/img/image-2.png)
 
 **Plugins:** These are the components that enable Terraform to interact with cloud providers, SaaS providers, and APIs.
 
