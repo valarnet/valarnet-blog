@@ -11,8 +11,8 @@ This is the third installment (pun intended) in the Terraform series.
 
 If you haven't seen the first two parts and would like to read them:
 
-- [Part 1: Terraform - Getting Started](https://valarnet.com/2022/05/20/getting-started-with-terraform-background/)
-- [Part 2: Terraform - The Fundamentals](https://valarnet.com/2022/05/21/part-2-terraform-fundamental-concepts/)
+- [Part 1: Terraform - Getting Started](/posts/part-1-getting-started-with-terraform-background/)
+- [Part 2: Terraform - The Fundamentals](/posts/part-2-terraform-fundamental-concepts/)
 
 In this post, we will describe how to install Terraform on Mac, Windows, and Ubuntu operating systems.
 

@@ -15,27 +15,10 @@ eleventyNavigation:
 
 <div class="container">
   <div class="hero">
-    <h1>
-      {% if site.hero.title %}
-        {% if pagination.pageNumber != 0 %}Page {{ pagination.pageNumber + 1 }} | {% endif %}
-        {{ site.hero.title }}
-      {% else %}
-        {{ site.meta.title }}
-      {% endif %}
-    </h1>
-    <p class="hero__description">
-      {% if site.hero.description %}
-        {{ site.hero.description }}
-      {% else %}
-        {{ site.meta.description }}
-      {% endif %}
-    </p>
-  </div>
-
-  <h2 class="section-title">
+  <h1 class="section-title">
     Latest Posts
     {%- if pagination.pageNumber != 0 %} - Page {{ pagination.pageNumber + 1 }}{% endif %}
-  </h2>
+  </h1>
   {% include "components/postslist.njk" %}
   <div class="pagination">
       {% if pagination.previous %}

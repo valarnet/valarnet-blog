@@ -83,11 +83,11 @@ small {
   }
 }
 a {
-  color: #7300e6;
+  color: #e34616;
   text-decoration: none;
 }
 body.dark a {
-  color: #c9f;
+  color: #e34616;
 }
 a:hover {
   text-decoration: underline;
