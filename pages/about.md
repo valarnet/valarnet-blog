@@ -1,6 +1,6 @@
 ---
 title: About Me
-description: All about me in this page
+description: About Me
 layout: layouts/post.njk
 hideTagsList: true
 eleventyNavigation:
