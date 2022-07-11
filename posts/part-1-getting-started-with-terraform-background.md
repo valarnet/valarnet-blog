@@ -4,9 +4,6 @@ date: "2022-05-20"
 categories: 
   - "valarnet"
 tags: 
-  - "code"
-  - "hcl"
-  - "iac"
   - "terraform"
 ---
 
@@ -34,7 +31,7 @@ In this post:
 
 It may seem like a tangent but I find tracking the origin of interesting words enjoyable and value it as an insightful exercise. Precision in description is critical to understanding concepts and rewiring one's mental model about any subject under study.
 
-Etymology of the word Terraform is stated at [wordsense.eu](https://www.wordsense.eu/terraform/)as a Latin and English combination of: _“**Terra** ("planet Earth") + **\-form** ("having the form of"). Coined by American science fiction author Jack Williamson in his 1942 novella Collision Orbit."_ It points to a process of modifying an environment to have the characteristics of planet Earth: its atmosphere, topography, ecology, and the like.
+Etymology of the word Terraform is stated at [wordsense.eu](https://www.wordsense.eu/terraform/)as a Latin and English combination of: _“**Terra** ("planet Earth") + **-form** ("having the form of"). Coined by American science fiction author Jack Williamson in his 1942 novella Collision Orbit."_ It points to a process of modifying an environment to have the characteristics of planet Earth: its atmosphere, topography, ecology, and the like.
 
 The obvious logical next question is "wait, what does this have to do with IT infrastructure?" It is not a literal equivalent but close enough in essence with parallels to the process of infrastructure transformation. I remain curious to learn why and how Terraform’s creators landed on the choice of calling it by that name. If you have a link or info about that, make sure to share it in the comments.
 

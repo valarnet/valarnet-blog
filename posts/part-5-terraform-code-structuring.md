@@ -183,7 +183,7 @@ variable "app_vpc_cidr" {
   description = "VPC CIDR block"
   type        = string
 }
-variable "app\_subnet\_cidr" {
+variable "app_subnet_cidr" {
   description = "Subnet CIDR block"
   type        = list(string)
 }
@@ -222,83 +222,83 @@ terraform {
 }
 # Provider
 provider "aws" {
-	region = var.aws\_region
+	region = var.aws_region
   }
 ```
 - Inside the vpc-peering-project directory, create a **network.tf** file
 ```hcl
 // This section of code provisions the Application VPC
-// env\_prefix=app, az=us-east-1c, vpc\_cidr=172.23.0.0/16
+// env_prefix=app, az=us-east-1c, vpc_cidr=172.23.0.0/16
 // subnet-a is 172.23.0.0/24, subnet-b is 172.23.1.0/24
 # Create app VPC
-resource "aws\_vpc" "app-vpc" {
-  cidr\_block = var.app\_vpc\_cidr
+resource "aws_vpc" "app-vpc" {
+  cidr_block = var.app_vpc_cidr
   tags = {
-    Name = format("%s-%s", var.app\_env\_prefix, "vpc")
+    Name = format("%s-%s", var.app_env_prefix, "vpc")
   }
 }
 # Create app-subnet-a
-resource "aws\_subnet" "app-subnet-a" {
-  vpc\_id            = aws\_vpc.app-vpc.id
-  cidr\_block        = var.app\_subnet\_cidr\[0\]
-  availability\_zone = var.app\_az
+resource "aws_subnet" "app-subnet-a" {
+  vpc_id            = aws_vpc.app-vpc.id
+  cidr_block        = var.app_subnet_cidr[0]
+  availability_zone = var.app_az
   tags = {
-    Name = format("%s-%s", var.app\_env\_prefix, var.app\_subnet\_name\[0\])
+    Name = format("%s-%s", var.app_env_prefix, var.app_subnet_name[0])
   }
 }
 # Create app-subnet-b
-resource "aws\_subnet" "app-subnet-b" {
-  vpc\_id            = aws\_vpc.app-vpc.id
-  cidr\_block        = var.app\_subnet\_cidr\[1\]
-  availability\_zone = var.app\_az
+resource "aws_subnet" "app-subnet-b" {
+  vpc_id            = aws_vpc.app-vpc.id
+  cidr_block        = var.app_subnet_cidr[1]
+  availability_zone = var.app_az
   tags = {
-    Name = format("%s-%s", var.app\_env\_prefix, var.app\_subnet\_name\[1\])
+    Name = format("%s-%s", var.app_env_prefix, var.app_subnet_name[1])
   }
 }
 // This section of code is for the Database VPC
-// env\_prefix=db, az=us-east-1d, vpc\_cidr=172.24.0.0/16
+// env_prefix=db, az=us-east-1d, vpc_cidr=172.24.0.0/16
 // subnet-a is 172.24.0.0/24, subnet-b is 172.24.1.0/24
 # Create db VPC
-resource "aws\_vpc" "db-vpc" {
-  cidr\_block = var.db\_vpc\_cidr
+resource "aws_vpc" "db-vpc" {
+  cidr_block = var.db_vpc_cidr
   tags = {
-    Name = format("%s-%s", var.db\_env\_prefix, "vpc")
+    Name = format("%s-%s", var.db_env_prefix, "vpc")
   }
 }
 # Create db-subnet-a
-resource "aws\_subnet" "db-subnet-a" {
-  vpc\_id            = aws\_vpc.db-vpc.id
-  cidr\_block        = var.db\_subnet\_cidr\[0\]
-  availability\_zone = var.db\_az
+resource "aws_subnet" "db-subnet-a" {
+  vpc_id            = aws_vpc.db-vpc.id
+  cidr_block        = var.db_subnet_cidr[0]
+  availability_zone = var.db_az
   tags = {
-    Name = format("%s-%s", var.db\_env\_prefix, var.db\_subnet\_name\[0\])
+    Name = format("%s-%s", var.db_env_prefix, var.db_subnet_name[0])
   }
 }
 # Create db-subnet-b
-resource "aws\_subnet" "db-subnet-b" {
-  vpc\_id            = aws\_vpc.db-vpc.id
-  cidr\_block        = var.db\_subnet\_cidr\[1\]
-  availability\_zone = var.db\_az
+resource "aws_subnet" "db-subnet-b" {
+  vpc_id            = aws_vpc.db-vpc.id
+  cidr_block        = var.db_subnet_cidr[1]
+  availability_zone = var.db_az
   tags = {
-    Name = format("%s-%s", var.db\_env\_prefix, var.db\_subnet\_name\[1\])
+    Name = format("%s-%s", var.db_env_prefix, var.db_subnet_name[1])
   }
 }
 ```
 - Inside the vpc-peering-project directory, create a **changing.tfvars** file
 ```hcl
-aws\_region    = "us-east-1"
+aws_region    = "us-east-1"
 
-app\_az = "us-east-1c"
-app\_env\_prefix = "app"
-app\_subnet\_name = \["subnet-a", "subnet-b"\]
-app\_vpc\_cidr = "172.23.0.0/16"
-app\_subnet\_cidr = \["172.23.0.0/24","172.23.1.0/24"\]
+app_az = "us-east-1c"
+app_env_prefix = "app"
+app_subnet_name = ["subnet-a", "subnet-b"]
+app_vpc_cidr = "172.23.0.0/16"
+app_subnet_cidr = ["172.23.0.0/24","172.23.1.0/24"]
 
-db\_az = "us-east-1d"
-db\_env\_prefix = "db"
-db\_subnet\_name = \["subnet-a", "subnet-b"\]
-db\_vpc\_cidr = "172.24.0.0/16"
-db\_subnet\_cidr = \["172.24.0.0/24", "172.24.1.0/24"\]
+db_az = "us-east-1d"
+db_env_prefix = "db"
+db_subnet_name = ["subnet-a", "subnet-b"]
+db_vpc_cidr = "172.24.0.0/16"
+db_subnet_cidr = ["172.24.0.0/24", "172.24.1.0/24"]
 ```
 At this point, your working directory should look like this:
 ```
@@ -346,7 +346,7 @@ The partial output will look like in the picture above. Terraform says it will a
 
 - They will disappear in the AWS console.
 
-If you review the code again, you can see that there are many lines that we can eliminate in order to optimize it. There are constant elements that lend themselves well to the usage of a **locals.tf** file. If we use list(string) type variables, we will have to rely on array references in the form of variable\_name\[0\] or variable\_name\[1\] to locate a value. This can make the code shorter but may reduce code readability in the long run.
+If you review the code again, you can see that there are many lines that we can eliminate in order to optimize it. There are constant elements that lend themselves well to the usage of a **locals.tf** file. If we use list(string) type variables, we will have to rely on array references in the form of variable_name[0] or variable_name[1] to locate a value. This can make the code shorter but may reduce code readability in the long run.
 
 So, in this case one subjective perspective could be to say "longer is better than an unreadable code." Trade offs like this (code-length vs code-readability) are what make code structures inevitably differ. It is not an exact science.
 

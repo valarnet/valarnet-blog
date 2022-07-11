@@ -46,7 +46,7 @@ You will have a zipped file downloaded:
 - On terminal application type terraform and hit enter. You should now see an output like this:
 ```bash
 ~/Downloads $ terraform
-Usage: terraform \[global options\] <subcommand> \[args\]
+Usage: terraform [global options] <subcommand> [args]
 The available commands for execution are listed below.
 The primary workflow commands are given first, followed by
 less common or more advanced commands.
@@ -92,7 +92,7 @@ To see terraform's version, type
 ```bash
 / $ terraform -version
 Terraform v1.2.0
-on darwin\_arm64
+on darwin_arm64
 ```
 To see which binary of terraform is in effect, type
 ```bash
@@ -141,7 +141,7 @@ In the window that pops up, click **New** to add a new line
 
 ![](/static/img/image-3-3.png)
 
-Add New line "C:\\terraform" to the list.
+Add New line "C:terraform" to the list.
 
 ![](/static/img/image-3-9.png)
 
@@ -183,7 +183,7 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 ```
 Add the HashiCorp repository to your system.
 ```bash
-sudo apt-add-repository "deb \[arch=$(dpkg --print-architecture)\] https://apt.releases.hashicorp.com $(lsb\_release -cs) main"
+sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 ```
 Install terraform using apt install
 ```bash

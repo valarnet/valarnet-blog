@@ -22,17 +22,17 @@ To make the description of the steps clearer and the code readable, I've structu
 ```
 .
 ├── main.tf
-├── vpc\_subnets.tf
-├── security\_grps.tf
+├── vpc_subnets.tf
+├── security_grps.tf
 ├── instances.tf
-├── temp\_remote\_access.tf
+├── temp_remote_access.tf
 ├── routing.tf
 ├── peering.tf
 ├── changing.tfvars
 ├── variables.tf
 ```
 
-The different VPC components are separated into their own files. You will see a vpc\_subnets.tf, routing.tf, instances.tf etc. If you wanted to customize the infrastructure or add another VPC such as a "web" to play around with, this modularity makes it easy.
+The different VPC components are separated into their own files. You will see a vpc_subnets.tf, routing.tf, instances.tf etc. If you wanted to customize the infrastructure or add another VPC such as a "web" to play around with, this modularity makes it easy.
 
 The code is uploaded over [here](https://github.com/valarnet/terraform-aws-vpc-peering-example) on GitHub. What each block of code does is commented on to make it easy to read and understand why it's there.
 
@@ -72,25 +72,25 @@ terraform apply -var-file=changing.tfvars
 9. Login to the AWS management console. Navigate to **VPC > Peering Connections**. There should be a new pending VPC peering connection. Select it and accept the VPC peering connection from the Actions drop down at the right top corner. The VPC will not become active and pass traffic until you do this.
 10. SSH in to app-ec2-a instance using your key and run ping tests to verify. The self-ping to 172.23.0.4 should succeed. The ping to db-ec2-a instance 172.24.0.4 should also succeed. The ping to db-ec2-b 172.24.1.4 should fail because Apps in Subnet A aren't allowed to communicate with database instances in subnet B as was required.
 ```bash
-ssh -i "my\_ec2\_key.cer" ec2-user@34.235.21.121
+ssh -i "my_ec2_key.cer" ec2-user@34.235.21.121
 
-\[ec2-user@ip-172-23-0-4 ~\]$ ping 172.23.0.4
+[ec2-user@ip-172-23-0-4 ~]$ ping 172.23.0.4
 PING 172.23.0.4 (172.23.0.4) 56(84) bytes of data.
-64 bytes from 172.23.0.4: icmp\_seq=1 ttl=255 time=0.023 ms
-64 bytes from 172.23.0.4: icmp\_seq=2 ttl=255 time=0.036 ms
-64 bytes from 172.23.0.4: icmp\_seq=3 ttl=255 time=0.032 ms
-64 bytes from 172.23.0.4: icmp\_seq=4 ttl=255 time=0.030 ms
-64 bytes from 172.23.0.4: icmp\_seq=5 ttl=255 time=0.031 ms
+64 bytes from 172.23.0.4: icmp_seq=1 ttl=255 time=0.023 ms
+64 bytes from 172.23.0.4: icmp_seq=2 ttl=255 time=0.036 ms
+64 bytes from 172.23.0.4: icmp_seq=3 ttl=255 time=0.032 ms
+64 bytes from 172.23.0.4: icmp_seq=4 ttl=255 time=0.030 ms
+64 bytes from 172.23.0.4: icmp_seq=5 ttl=255 time=0.031 ms
 
-\[ec2-user@ip-172-23-0-4 ~\]$ ping 172.24.0.4
+[ec2-user@ip-172-23-0-4 ~]$ ping 172.24.0.4
 PING 172.24.0.4 (172.24.0.4) 56(84) bytes of data.
-64 bytes from 172.24.0.4: icmp\_seq=1 ttl=255 time=1.48 ms
-64 bytes from 172.24.0.4: icmp\_seq=2 ttl=255 time=1.53 ms
-64 bytes from 172.24.0.4: icmp\_seq=3 ttl=255 time=1.48 ms
-64 bytes from 172.24.0.4: icmp\_seq=4 ttl=255 time=1.59 ms
-64 bytes from 172.24.0.4: icmp\_seq=5 ttl=255 time=1.48 ms
+64 bytes from 172.24.0.4: icmp_seq=1 ttl=255 time=1.48 ms
+64 bytes from 172.24.0.4: icmp_seq=2 ttl=255 time=1.53 ms
+64 bytes from 172.24.0.4: icmp_seq=3 ttl=255 time=1.48 ms
+64 bytes from 172.24.0.4: icmp_seq=4 ttl=255 time=1.59 ms
+64 bytes from 172.24.0.4: icmp_seq=5 ttl=255 time=1.48 ms
 
-\[ec2-user@ip-172-23-0-4 ~\]$ ping 172.24.1.4
+[ec2-user@ip-172-23-0-4 ~]$ ping 172.24.1.4
 PING 172.24.1.4 (172.24.1.4) 56(84) bytes of data.
 ^C
 --- 172.24.1.4 ping statistics ---

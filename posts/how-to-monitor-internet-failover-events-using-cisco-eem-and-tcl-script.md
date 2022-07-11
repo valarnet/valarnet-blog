@@ -39,15 +39,15 @@ The first order of business is to make sure you have your IP SLA, track object a
 ```
 After you have that configured, you’d define the Cisco EEM event variables you’ll later be using in the Tcl script.
 ```
-(config)# event manager environment \_mail\_server 10.4.1.23
-(config)# event manager environment \_mail\_src\_ip 10.10.10.1
-(config)# event manager environment \_mail\_from youremail@organization.com
-(config)# event manager environment \_mail\_to technicianemail@organization.com
-(config)# event manager environment \_mail\_cc\_to anothertech@organization.com
+(config)# event manager environment _mail_server 10.4.1.23
+(config)# event manager environment _mail_src_ip 10.10.10.1
+(config)# event manager environment _mail_from youremail@organization.com
+(config)# event manager environment _mail_to technicianemail@organization.com
+(config)# event manager environment _mail_cc_to anothertech@organization.com
 ```
 These variables above are just like what you would have in an ordinary programming language. They are values to be used down the line.
 
-If you have numerous IP addresses configured on the router, some of the errors you may potentially experience in the end are SMTP reply code 530 or error in reply. This means the email notification sent by the router is getting denied by your mail server. In such instances, the email needs to be sourced from an IP address that’s trusted; in this case _\_mail\_src\_ip_.
+If you have numerous IP addresses configured on the router, some of the errors you may potentially experience in the end are SMTP reply code 530 or error in reply. This means the email notification sent by the router is getting denied by your mail server. In such instances, the email needs to be sourced from an IP address that’s trusted; in this case _mail_src_ip_.
 
 Another consideration is to understand if there is a need to change the default SMTP port number 25 to 587 or 465 etc. That would be specific to your environment and needs to be adjusted accordingly when setting up the config.
 
@@ -62,53 +62,53 @@ eem-call-home: (rel2)1.0.4
 ```
 At this point the EEM variables have been defined and we can proceed to the Tcl scripting segment.
 ```tcl
-::cisco::eem::event\_register\_track 1 state any
-namespace import ::cisco::eem::\*
-namespace import ::cisco::lib::\*
+::cisco::eem::event_register_track 1 state any
+namespace import ::cisco::eem::*
+namespace import ::cisco::lib::*
 # This extracts the hostname of your router and assigns it to variable routername
-set routername \[info hostname\]
-# This requests the status of tracked object (down or up) and assigns it to track\_state
-array set track\_info \[event\_reqinfo\]
-set track\_state $track\_info(track\_state)
-if {$track\_state == "down"} {
-action\_syslog msg "Primary Internet Path Down"
+set routername [info hostname]
+# This requests the status of tracked object (down or up) and assigns it to track_state
+array set track_info [event_reqinfo]
+set track_state $track_info(track_state)
+if {$track_state == "down"} {
+action_syslog msg "Primary Internet Path Down"
 
-set mail\_pre "Mailservername: $\_mail\_server\\n"
-append mail\_pre "From: $\_mail\_from\\n"
-append mail\_pre "To: $\_mail\_to\\n"
-append mail\_pre "Cc: $\_mail\_cc\_to\\n"
-append mail\_pre "Sourceaddr: $\_mail\_src\_ip\\n"
-append mail\_pre "Subject: $routername PRIMARY INTERNET PATH DOWN\\n\\n"
-append mail\_pre "$routername Primary Internet Path Down. \\nPlease investigate and contact ISP if necessary\\n\\n"
+set mail_pre "Mailservername: $_mail_servern"
+append mail_pre "From: $_mail_fromn"
+append mail_pre "To: $_mail_ton"
+append mail_pre "Cc: $_mail_cc_ton"
+append mail_pre "Sourceaddr: $_mail_src_ipn"
+append mail_pre "Subject: $routername PRIMARY INTERNET PATH DOWNnn"
+append mail_pre "$routername Primary Internet Path Down. nPlease investigate and contact ISP if necessarynn"
 
-set mail\_msg \[uplevel #0 \[list subst -nobackslashes -nocommands $mail\_pre\]\]
-if \[catch {smtp\_send\_email $mail\_msg} result\] {
+set mail_msg [uplevel #0 [list subst -nobackslashes -nocommands $mail_pre]]
+if [catch {smtp_send_email $mail_msg} result] {
 error $result $errorInfo
 }
 } else {
-action\_syslog msg "Primary Internet Circuit UP"
+action_syslog msg "Primary Internet Circuit UP"
 
-set mail\_pre "Mailservername: $\_mail\_server\\n"
-append mail\_pre "From: $\_mail\_from\\n"
-append mail\_pre "To: $\_mail\_to\\n"
-append mail\_pre "Cc: $\_mail\_cc\_to\\n"
-append mail\_pre "Sourceaddr: $\_mail\_src\_ip\\n"
-append mail\_pre "Subject: $routername PRIMARY INTERNET PATH UP\\n\\n"
-append mail\_pre "$routername Primary Internet Path UP. \\n\\n"
+set mail_pre "Mailservername: $_mail_servern"
+append mail_pre "From: $_mail_fromn"
+append mail_pre "To: $_mail_ton"
+append mail_pre "Cc: $_mail_cc_ton"
+append mail_pre "Sourceaddr: $_mail_src_ipn"
+append mail_pre "Subject: $routername PRIMARY INTERNET PATH UPnn"
+append mail_pre "$routername Primary Internet Path UP. nn"
 
-set mail\_msg \[uplevel #0 \[list subst -nobackslashes -nocommands $mail\_pre\]\]
-if \[catch {smtp\_send\_email $mail\_msg} result\] {
+set mail_msg [uplevel #0 [list subst -nobackslashes -nocommands $mail_pre]]
+if [catch {smtp_send_email $mail_msg} result] {
 error $result $errorInfo
 }
 }
-action\_syslog msg "E-mail sent to $\_mail\_to and $\_mail\_cc\_to!"
+action_syslog msg "E-mail sent to $_mail_to and $_mail_cc_to!"
 ```
 Once you’ve saved your Tcl Script to a file with a .tcl extension, you’d just need to TFTP it to your router. Here I’ll just upload it to flash: directory.
 ```
 #copy tftp flash:
-Address or name of remote host \[\]? 10.2.1.25
-Source filename \[\]? sendmail.tcl
-Destination filename \[\]? sendmail.tcl
+Address or name of remote host []? 10.2.1.25
+Source filename []? sendmail.tcl
+Destination filename []? sendmail.tcl
 ```
 At this point you’re ready to specify the working directory of the Event Manager by pointing it to the router directory you’ve uploaded the file.
 ```

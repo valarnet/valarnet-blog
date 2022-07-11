@@ -52,7 +52,7 @@ Pictorially, the terraform lifecycle looks as shown here.
 
 **What happens during each stage of the lifecycle?**
 
-**0\. Write**
+**0. Write**
 
 You, as the infrastructure coder, write code using the HashiCorp Configuration Language (HCL). You save this configuration file in a directory of your choice with a **.tf** file extension. This directory is referred to as a working directory.
 
@@ -65,23 +65,23 @@ What is a working directory and why do we need it?
 - It hosts a hidden directory **.terraform** which caches _provider plugins_ & modules, keeps a record of which _workspace_ is currently active, and records the last known _backend_ configuration. The **.terraform** hidden directory will be prepared during the init stage.  We'll elaborate what provider plugins are as we go further.
 - The working directory can hold state data if we are using the default **local** backend. We store this state data either in a **terraform.tfstate** file (if using only the default workspace) or inside a **terraform.tfstate.d** directory if we have defined multiple workspaces. if we're using a remote backend location, the state data will not be in the working directory.
 
-**1\. Init**
+**1. Init**
 
 Here you invoke **terraform init** command in the working directory that contains configuration files. This invocation triggers Terraform to prepare the hidden .terraform directory we mentioned above, instructs it to download and install required provider plugins and modules, and to locate the backend configuration file for state information.
 
-**2\. Plan**
+**2. Plan**
 
 When you issue the **terraform plan** command, Terraform starts preparing an execution plan. It looks at the state information it accessed from the backend in the **init** stage, reads through what the configuration file is asking it to do, compares what is being asked with the prior state information, then proposes changes that need to be applied. It does not execute these changes but lets you know what it proposes.
 
 This is a step where you need to be paying extra attention to what is being proposed to you, especially if you are going to apply these changes in production environments. You do not want to bring down the house.
 
-**3\. Apply**
+**3. Apply**
 
 Now that there is a plan of execution, it is up to you as the infrastructure manager to review and understand what is being proposed. If you are comfortable with the proposals, you issue **terraform apply** command and permit Terraform to start executing according to the plan.
 
 At this stage, additions, modifications, or deletions occur to transform the infrastructure from its current state to the desired state. Terraform does this by making actual use of the provider plugins and modules it downloaded in the **init** stage.
 
-**4\. Destroy**
+**4. Destroy**
 
 If you are like [the joker](https://www.youtube.com/watch?v=wbbz9ccZks8), you'll find this to be the most fun of the stages. This is where we tell Terraform to destroy infrastructure resources by issuing a **terraform destroy** command. This may be for whatever reason - the infrastructure has served its purpose, is being decommissioned, or it hasn't met the build requirements, etc. More on this later.
 

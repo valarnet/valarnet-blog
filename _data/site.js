@@ -11,9 +11,5 @@ module.exports = {
     path: "/atom.xml",
     id: "https://valarnet.com/",
     authorName: "Ashenafi",
-  },
-  hero: { // used in hero section of main page ie. index.html.njk
-    title: "Welcome to my blog",
-    description: "Computer networks and security."
   }
 }

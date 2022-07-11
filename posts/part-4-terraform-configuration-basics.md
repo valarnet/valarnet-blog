@@ -57,9 +57,9 @@ Let's take a look at examples of some configuration formats out there.
 - **XML (Extended Markup Language)** - This format is used in multiple implementations and systems. But, as an example, if you have operated a centrally managed Cisco, Fortinet, or other VPN, you are already intimately familiar with it. It allows us to tell a client machine if it should prompt for certificates,  what the description of the VPN should be, if the client machine is allowed to access local resources while on VPN, and so on.
 ```xml
 <ike_settings>
-    <prompt_certificate>[BOOLEAN_VALUE\]</prompt_certificate>
+    <prompt_certificate>[BOOLEAN_VALUE]</prompt_certificate>
     <description>[STRING_VALUE]</description>
-    <server>[STRING_VALUE\]</server>
+    <server>[STRING_VALUE]</server>
     <enable_local_lan>[BOOLEAN_VALUE]</enable_local_lan>
 </ike_settings>
 ```
@@ -315,6 +315,6 @@ For example, saving access and secret keys in a text file is just simply invitin
 
 Another item to take note of is that we have defined the **terraform**, **provider**, and **resource** blocks in the same configuration file. This might work since we have here a limited number of configuration lines and resource definitions. But in the real world, our configs are going to be long and complex. **How can we handle this more efficiently?**
 
-We will see how to make use of a proper modular organization in which we put the terraform block in its own **versions.tf** file, provider block in its own **provider.tf**, resource files according to their own categorization such as **network.tf**, **security\_groups.tf**, etc. Then coordinate dependency calls upon each file to deploy and modify the infrastructure as needed.
+We will see how to make use of a proper modular organization in which we put the terraform block in its own **versions.tf** file, provider block in its own **provider.tf**, resource files according to their own categorization such as **network.tf**, **security_groups.tf**, etc. Then coordinate dependency calls upon each file to deploy and modify the infrastructure as needed.
 
 In addition, to achieve flexibility and a well-managed deployment, we will see how we can use environment variable definition files. **What will this help us with?** When we need to deploy a new environment with similar settings, we only change the environment variables file and reduce the number of points we have to touch during each deployment. Thereby reducing risk of human error which is one of the selling points for automation.

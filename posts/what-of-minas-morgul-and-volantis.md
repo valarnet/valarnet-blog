@@ -2,9 +2,9 @@
 title: "What of Minas Morgul and Volantis?"
 date: "2022-06-14"
 categories: 
-  - "musings"
+  - "random"
 tags: 
-  - "musings"
+  - "random"
 ---
 
 One of the most memorable books I read as a teen is a book called "[The Idea Factory: Learning to Think at MIT](https://www.amazon.com/Idea-Factory-Learning-Think-MIT/dp/0262731428)" by Pepper White. For a kid in the middle of nowhere, the opportunity to vicariously visit the renowned Massachusetts Institute of Technology (MIT) was no doubt an alluring one.

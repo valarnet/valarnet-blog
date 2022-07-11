@@ -98,7 +98,7 @@ When the uptime total goes above the threshold (3 hours in my case), I receive a
 
 That's it. Very simple steps. But guaranteed to save you some cost due to forgetting to spin down a VM after using it.
 
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+________________________________________________________________________
 
 **SIDE NOTES**
 
