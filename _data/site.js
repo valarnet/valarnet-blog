@@ -4,6 +4,7 @@ module.exports = {
     description: "Computer networks and security.",
     lang: "en",
     siteUrl: "https://valarnet.com/",
+    theme: "@Eleventy+Stylus Theme",
   },
   feed: { // used in feed.xml.njk
     subtitle: "Computer networks and security.",
