@@ -1,5 +1,5 @@
 ---
-title: "BGP Router ID Basic"
+title: "BGP Router ID & Best Path Selection"
 date: "2022-07-10"
 categories: 
   - "valarnet"
