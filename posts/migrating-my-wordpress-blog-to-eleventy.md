@@ -59,7 +59,7 @@ git push
 Validate the changes have propagated to remote repo (**important step not to lose the changes**)
 git fetch
 ```
-My branch and origin/main stay synced and the git status reflects that. Make sure to validate the push has made your changes propagate to to origin/main before doing a git fetch. Otherwise, git fetch can overwrite the local main branch. 
+My branch and origin/main stay synced and the git status reflects that. Make sure to validate the push has made your changes propagate to origin/main before doing a git fetch. Otherwise, git fetch can overwrite the local main branch. 
 
 There are some additional things I want to modify over the next few days as I find the time. Some of which are simple tweaks such as same file markdown location linking, the looks and colors in main.css, integrate Netlify analytics, mobile site rendering customizations, minimize post title font size rem, etc.
 
