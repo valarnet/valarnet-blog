@@ -101,11 +101,11 @@ Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State
 ```
 The "clear ip bgp *" command not only resets the peering but also forces BGP to reinstantiate and pickup a new router ID.  A reboot of the router would also have a similar effect as well.
 
-The entire topology is now configured using basic peerings and with default values. Loopback0 of R4 is created last and advertised into BGP using a network stateement. 
+The entire topology is now configured using basic peerings and with default values. Loopback0 of R4 is created last and advertised into BGP using a network statement. 
 
 Randomness with which interfaces are configured and BGP process instantiated determines what router ID each router takes for BGP.
 
-The output below shows that the highest router ID on R4 when the BGP process was instantiated is 10.34.34.4. It is selected as the bGP router ID.
+The output below shows that the highest address on R4 when the BGP process was instantiated is 10.34.34.4. It is selected as R4's BGP router ID.
 ```
 R4#sh ip bgp summa
 BGP router identifier 10.34.34.4, local AS number 400
@@ -115,7 +115,7 @@ Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State
 10.23.23.2      4          200       2       4        1    0    0 00:00:11        0
 10.34.34.3      4          300       2       2        1    0    0 00:00:07        0
 ```
-R1 now sees Loopback0 address of R4 via two paths. one via R2 and another via R3. R1 selected the path to 192.168.1.1/32 via R3 as best.
+R1 now sees Loopback0 address of R4 via two paths: one via R2 and another via R3. R1 selected the path to 192.168.1.1/32 via R3 as the best.
 ```
 R1#sh ip bgp
 BGP table version is 2, local router ID is 10.13.13.1
@@ -150,7 +150,7 @@ Paths: (2 available, best #2, table default)
       rx pathid: 0, tx pathid: 0x0
 ```
 
-192.168.1.1/32 is an eBGP learned prefix. Since "bgp bestpath compare-routerid" is disabled by default, R1 selected the path via R3 as it was the oldest received path for the prefix 192.168.1.1/32. This is apparent in the sequence the prefixes are listed in the "show ip bgp" output. The "show ip bgp" output displays the newest received prefix for the same path at the top and the older ones lower in the list.
+192.168.1.1/32 is an eBGP learned prefix. Since "bgp bestpath compare-routerid" is disabled by default, R1 selected the path via R3 as it was the oldest received path for 192.168.1.1/32. This is apparent in the sequence the prefixes are listed in the "show ip bgp" output. The "show ip bgp" output displays the newest received prefix for the same path at the top and the older ones lower in the list.
 
 Turning off R3's Gi0/0 link to R1 and allowing BGP sufficient time to converge will withdraw the 192.168.1.1/32 prefix from R1's BGP table. 
 ```
