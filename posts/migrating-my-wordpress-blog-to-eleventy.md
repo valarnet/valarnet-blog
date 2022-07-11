@@ -61,6 +61,6 @@ git fetch
 ```
 My branch and origin/main stay synced and the git status reflects that. Make sure to validate the push has made your changes propagate to to origin/main before doing a git fetch. Otherwise, git fetch can overwrite the local main branch. 
 
-There are some additional things I want to modify over the next few days as I find the time. Some of which are simple tweaks such as same file markdown location linking, the looks and colors in main.css, mobile site rendering customizations, reduce post title font size, etc.
+There are some additional things I want to modify over the next few days as I find the time. Some of which are simple tweaks such as same file markdown location linking, the looks and colors in main.css, integrate Netlify analytics, mobile site rendering customizations, minimize post title font size rem, etc.
 
 **Huge appreciation to the Eleventy and Open Source community who make tons of hours of their work available to use freely!** :clap:
