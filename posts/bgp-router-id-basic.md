@@ -7,11 +7,11 @@ tags:
   - "bgp"
   - "cisco"
 ---
-In BGP, the router ID serves as an identifier and best path selection tie breaker if all other preceding path selection parameters match. BGP prefers the path learned via the lowest router ID. Cisco IOS by default disables BGP best path selection using lowest router ID. 
+In BGP, the router ID serves as an identifier and best path selection tie breaker if all other preceding path selection parameters match. BGP prefers the path learned via the lowest router ID.  
 
 If BGP router ID is not explicitly configured, BGP takes the highest IP address from one of its interfaces and uses it as an ID. The BGP router-id doesn't have to be routable. 
 
-The **"bgp bestpath compare-routerid"** command can be used under bgp router configuration mode to enable BGP to compare paths based on router ID.
+The **"bgp bestpath compare-routerid"** command can be used under bgp router configuration mode to enable BGP to compare paths based on router ID. Cisco IOS by default disables this.
 
 ![](/static/img/bgp-router-id.png)
 
