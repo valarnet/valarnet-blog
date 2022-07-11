@@ -7,6 +7,8 @@ tags:
   - "bgp"
   - "cisco"
 ---
+This article explains BGP router ID and path selection behavior in Cisco IOS 15.7.
+
 In BGP, the router ID serves as an identifier and best path selection tie breaker if all other preceding path selection parameters match. BGP prefers the path learned via the lowest router ID.  
 
 If BGP router ID is not explicitly configured, BGP takes the highest IP address from one of its interfaces and uses it as an ID. The BGP router-id doesn't have to be routable. 
