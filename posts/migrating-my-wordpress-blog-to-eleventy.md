@@ -45,7 +45,7 @@ Also added the reference in the index file.
 - Committed changes, pushed to remote, and deployed the site to Netlify.
 - Changed my DNS to Netlify and waited for it to propagate.
 
-An annoying message I continued seeing when committing and pushing changes to my remote blog repo is a falling out of sync between local main bracnh and origin/main
+An annoying message I continued seeing when committing and pushing changes to my remote blog repo is a falling out of sync between local main branch and origin/main
 ```bash
 On branch main
 Your branch is ahead of 'origin/main' by 1 commit.
