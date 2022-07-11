@@ -192,7 +192,6 @@ router bgp 100
 ```
 To trigger best path selection, a "clear ip bgp *" is performed on R1. The path via R3 is the oldest (by virtue of it showing at the bottom of the list in show ip bgp list). But the path via R2 is installed as the best path since it was learned via R2 (lower router ID 10.23.23.2 compared to R3's 10.34.34.3).
 
-Which entry i.e. path via R2 or R3 is oldest can be mimicked by turning off interface linking R1 to either on R2 or R3 respectively. In the case of the output shown below, it wasn't necessary to do that.
 ```
 R1#sh ip bgp
 BGP table version is 2, local router ID is 10.13.13.1
@@ -225,3 +224,4 @@ Paths: (2 available, best #1, table default)
       Origin IGP, localpref 100, valid, external
       rx pathid: 0, tx pathid: 0
 ```
+Which entry i.e. path via R2 or R3 is oldest can be simulated by turning off interface linking R1 to either R2 or R3 respectively. In the case of the output shown above, it wasn't necessary to do so.
