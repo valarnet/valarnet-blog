@@ -1,5 +1,5 @@
 ---
-title: "Cisco Silicon One Chips and the Networking Landscape￼"
+title: "Cisco Silicon One Chips and the Networking Landscape"
 date: "2022-06-18"
 categories: 
   - "valarnet"
