@@ -152,3 +152,75 @@ Paths: (2 available, best #2, table default)
 
 192.168.1.1/32 is an eBGP learned prefix. Since "bgp bestpath compare-routerid" is disabled by default, R1 selected the path via R3 as it was the oldest received path for the prefix 192.168.1.1/32. This is apparent in the sequence the prefixes are listed in the "show ip bgp" output. The "show ip bgp" output displays the newest received prefix for the same path at the top and the older ones lower in the list.
 
+Turning off R3's Gi0/0 link to R1 and allowing BGP sufficient time to converge will withdraw the 192.168.1.1/32 prefix from R1's BGP table. 
+```bash
+R1#sh ip bgp
+BGP table version is 4, local router ID is 10.13.13.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter,
+              x best-external, a additional-path, c RIB-compressed,
+              t secondary path,
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>   192.168.1.1/32   10.12.12.2                             0 200 400 i
+ ```
+Then re-enabling Gi0/0 on R1 to advertise the prefix again will allow it to propagate. Now the path via R2 is the oldest route and is selected as the best path. In the output, it also shows at the bottom of the list reflecting that it is the oldest.
+```bash
+R1#sh ip bgp
+BGP table version is 4, local router ID is 10.13.13.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter,
+              x best-external, a additional-path, c RIB-compressed,
+              t secondary path,
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *    192.168.1.1/32   10.13.13.3                             0 300 400 i
+ *>                    10.12.12.2                             0 200 400 i
+```
+Next "bgp bestpath compare-routerid" is enabled on R1.
+```bash
+R1#sh run | sec router bgp
+router bgp 100
+ bgp log-neighbor-changes
+ bgp bestpath compare-routerid
+ neighbor 10.12.12.2 remote-as 200
+ neighbor 10.13.13.3 remote-as 300
+```
+To trigger best path selection, a "clear ip bgp *" is performed on R1. The path via R3 is the oldest (by virtue of it showing at the bottom of the list in show ip bgp list). But the path via R2 is installed as the best path since it was learned via R2 (lower router ID 10.23.23.2 compared to R3's 10.34.34.3).
+```bash
+R1#sh ip bgp
+BGP table version is 2, local router ID is 10.13.13.1
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal,
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter,
+              x best-external, a additional-path, c RIB-compressed,
+              t secondary path,
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+ *>   192.168.1.1/32   10.12.12.2                             0 200 400 i
+ *                     10.13.13.3                             0 300 400 i
+```
+```bash
+
+R1#sh ip bgp 192.168.1.1
+BGP routing table entry for 192.168.1.1/32, version 2
+BGP Bestpath: compare-routerid
+Paths: (2 available, best #1, table default)
+  Advertised to update-groups:
+     2
+  Refresh Epoch 2
+  200 400
+    10.12.12.2 from 10.12.12.2 (10.23.23.2)
+      Origin IGP, localpref 100, valid, external, best
+      rx pathid: 0, tx pathid: 0x0
+  Refresh Epoch 2
+  300 400
+    10.13.13.3 from 10.13.13.3 (10.34.34.3)
+      Origin IGP, localpref 100, valid, external
+      rx pathid: 0, tx pathid: 0
+```
