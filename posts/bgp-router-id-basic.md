@@ -101,7 +101,7 @@ Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State
 ```
 The "clear ip bgp *" command not only resets the peering but also forces BGP to reinstantiate and pickup a new router ID.  A reboot of the router would also have a similar effect as well.
 
-The entire topology is now configured using basic peerings and with default values. Loopback0 of R4 is created last and advertised into BGP using a network statetement. 
+The entire topology is now configured using basic peerings and with default values. Loopback0 of R4 is created last and advertised into BGP using a network stateement. 
 
 Randomness with which interfaces are configured and BGP process instantiated determines what router ID each router takes for BGP.
 
