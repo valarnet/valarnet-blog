@@ -7,7 +7,7 @@ tags:
   - "bgp"
   - "cisco"
 ---
-This article shows BGP implementation on Cisco IOS prefers to use address from a lopback interface as its router ID even if there is another higher IP address on a physical interface.
+This article shows BGP implementation on Cisco IOS prefers to use address from a loopback interface as its router ID even if there is another higher IP address on a physical interface.
 
 A simple two router topolgy is utilized.
 
