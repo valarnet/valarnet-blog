@@ -62,6 +62,6 @@ In the topology shown above, Site-1 is multihomed to the MPLS backbone. CE1 and 
 The particular cases when BGP's AS Path attribute as a loop avoidance mechanism fails and Site of Origin comes in handy is of interest. It will be explained in a separate configuration and outputs post.
 
 In summary: 
-- Route distinguishers are not community values and identify specific routes. They are not required to identify sites or VPNs.
+- Route distinguishers are not community values and provide uniqueness among specific routes. They are not required to identify sites or VPNs.
 - Route targets are extended community values and identify sites or VPNs. Route distribution among VPNs or sites can be controllerd using **import** and **export** actions on route target values. 
 - Site of Origin is an extended community value that can be used for loop prevention when a site is MPLS VPN multihomed.
