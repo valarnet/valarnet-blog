@@ -64,4 +64,4 @@ The particular cases when BGP's AS Path attribute as a loop avoidance mechanism 
 In summary: 
 - Route distinguishers are not community values and identify specific routes. They are not required to identify sites or VPNs.
 - Route targets are extended community values and identify sites or VPNs. Route distribution among VPNs or sites can be controllerd using **import** and **export** actions on route target values. 
-- Site of Origin is an extended community value that can be used for loop prevention when a site i is MPLS VPN multihomed.
+- Site of Origin is an extended community value that can be used for loop prevention when a site is MPLS VPN multihomed.
