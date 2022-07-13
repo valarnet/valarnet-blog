@@ -57,7 +57,7 @@ RFC 4364 describes the Site of Origin as:
 
 ![](/static/img/bgp-site-of-origin.png)
 
-In the topology shown above, Site-1 is multihomed to the MPLS backbone. CE1 and CE2 are in the same AS. CE1 injects prefix into BGP via PE1. PE1 tags the prefix with the Site of Origin to mark which site it originated from. PE1 advertises this prefix to PE2 via VPNv4 iBGP peering. The Site of Origin extended community can then be used to stop PE2 from sending the prefix back into Site-1 via CE2. Thus avoiding a loop.
+In the topology shown above, Site-1 is multihomed to the MPLS backbone. CE1 and CE2 are in the same AS. CE1 injects prefix into BGP via PE1. PE1 tags the prefix with the Site of Origin to mark which site it originated from. PE1 advertises this prefix to PE2 via VPNv4 iBGP peering. The Site of Origin extended community can then be used to stop PE2 from sending the prefix back into Site-1 via CE2. Thus avoiding potentials for a loop.
 
 The particular cases when BGP's AS Path attribute as a loop avoidance mechanism fails and Site of Origin comes in handy is of interest. It will be explained in a separate configuration and outputs post.
 
