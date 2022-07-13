@@ -20,7 +20,7 @@ An important first distinction is route targets and Site of Origin are defined i
 ##### Route Distinguishers (RD)
 Route distinguisher is an 8 byte (64 bit) value that gets appended to an IPv4 prefix to ensure routes are unique in the MPLS backbone. 
 
-A format that is often used to represent an RD is *ASN:LocalAssignedValue* such as 65101:1 where 65101 is the Autonomous System Number and 1 is a locally assigned value. But from the routers perspective, this notation is irrelevant. It compares the whole 8 bytes.
+A format that is often used to represent an RD is *ASN:LocalAssignedValue* such as 65101:1 where 65101 is the Autonomous System Number and 1 is a locally assigned value. But from a router's perspective, this notation is irrelevant. It compares the whole 8 bytes.
 
 A route distinguisher can be assigned per VPN, per VRF, or per VRF per site. Therefore, an RD should not be expected to necessarily describe a site or a VPN. It may or it may not depending on the RD design used. What is required of an RD is to distinguish and provide uniqueness among routes; not sites or VPNs.
 
