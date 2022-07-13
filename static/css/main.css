@@ -83,11 +83,11 @@ small {
   }
 }
 a {
-  color: #80007f;
+  color: #0090ad;
   text-decoration: none;
 }
 body.dark a {
-  color: #c9f;
+  color: #0090ad;
 }
 a:hover {
   text-decoration: underline;
@@ -112,7 +112,7 @@ hr {
   justify-content: center;
   padding: 0.5rem 0;
   background: #f2f2f2;
-  color: #80007f;
+  color: #0090ad;
 }
 body.dark .footer {
   background: #3d3d3d;
