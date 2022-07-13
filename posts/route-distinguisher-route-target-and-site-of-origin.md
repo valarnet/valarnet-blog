@@ -18,17 +18,17 @@ An important first distinction is route targets and Site of Origin are defined i
 
 #### Descriptions, Format, and Functions
 ##### Route Distinguishers (RD)
-Route distinguisher is an 8 byte (64 bit) value that gets appended to an IPv4 prefix to ensure routes are unique in the MPLS backbone. 
+Route distinguisher is an 8 byte (64 bit) value that gets prepended to an IPv4 prefix to ensure routes are unique in the MPLS backbone. 
 
-A format that is often used to represent an RD is *ASN:LocalAssignedValue* such as 65101:1 where 65101 is the Autonomous System Number and 1 is a locally assigned value. But from a router's perspective, this notation is irrelevant. It compares the whole 8 bytes.
+A format that is often used to represent an RD is *ASN:LocalAssignedValue* such as 65101:1 where 65101 is the Autonomous System Number and 1 is a locally assigned value. But from a router'sx perspective, this notation is irrelevant. It compares the whole 8 bytes.
 
 A route distinguisher can be assigned per VPN, per VRF, or per VRF per site. Therefore, an RD should not be expected to necessarily describe a site or a VPN. It may or it may not depending on the RD design used. What is required of an RD is to distinguish and provide uniqueness among routes; not sites or VPNs.
 
-If the same 10.16.1.0/24 IPv4 prefix is advertised into the MPLS backbone from different places, on provider edge (PE) routers different RD values need to be appended so the routes are recognized as distinct in the MPLS core.
+If the same 10.16.1.0/24 IPv4 prefix is advertised into the MPLS backbone from different places, on provider edge (PE) routers different RD values need to be prepended so the routes are recognized as distinct in the MPLS core.
 
 ![](/static/img/route-distinguisher.png)
 
-The RDs are appended to create two unique entries (**65101**:1:10.16.1.0/24 and **65102**:1:10.16.1.0/24) from the same 10.16.1.0/24 route.
+The RDs are prepended to create two unique entries (**65101**:1:10.16.1.0/24 and **65102**:1:10.16.1.0/24) from the same 10.16.1.0/24 route.
 
 ##### Route Targets (RTs)
 
