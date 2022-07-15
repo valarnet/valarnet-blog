@@ -7,7 +7,7 @@ tags:
   - "fortinet"
   - "FortiOS"
 ---
-When performing flow traces on a FortiGate firewall, one of the error messages that may get thrown is the "iprope_in_check() check failed, drop"
+When performing flow traces on a FortiGate firewall, one of the messages that may get thrown is the "iprope_in_check() check failed, drop"
 
 Flow trace is typically done by executing a variation of these commands with the filters as desired.
 ```
@@ -23,7 +23,7 @@ A very good Fortinet KB at [this](https://community.fortinet.com/t5/FortiGate/Tr
 
 It is a rare scenario but another circumstance when the "iprope_in_check() check failed, drop" message can be observed is if any potentially interfering policy is configured under the local-in-policy settings. 
 
-By default, there should be no policy configured under local-in-policy but when troublshooting environments that have been setup for a period of time, checking on it is warranted.
+By default, there should be no policy configured under local-in-policy but when troubleshooting environments that have been setup for a period of time, checking on it is warranted.
 
 For instance, if there is a trusted host configuration put in place that allows certain IP addresses to access the GUI or SSH of the FortiGate device, and there is also a local-in-policy for the same IP, these settings may step on each other. Observed on FortiOS 6.2.11
 
