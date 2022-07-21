@@ -20,7 +20,7 @@ interface GigabitEthernet0/2
  ip nat outside
 ``` 
 NAT behavior for traffic entering via Gi0/0 (inside) and flowing out of Gi0/2 (outside) would operate as:
-1. Traffic enters Gi0/0. A routing lookup is performed. Then, NAT translaton rulw is consulted.
+1. Traffic enters Gi0/0. A routing lookup is performed. Then, NAT translaton rule is consulted.
 2. Return traffic entering Gi0/2 would be NAT translated. Then, a lookup will be performed to route the resulting packet.
 
 In Cisco IOS-XE, the software construct that makes inter-VRF NAT possible is VRF-Aware Software Infrastructure (VASI) NAT. This is not the direct topic of this post but many of the equivalent concepts described here for IOS apply. 
@@ -33,7 +33,7 @@ Consider the following topology.
 
 ![](/static/img/nat-vrfs.png)
 
-In this topology, there are three VRFs that segment router R1 into three virtually distinct routing tables. These logical segmentations can be visualized as depicted below. What occurs in the white space to link the routing tables is the routing and NAT software construct of interest here.
+In this topology, there are three VRFs that segment router R1 into three virtually distinct routing tables. These logical segmentations can be visualized as depicted below. What occurs in the white space to link the routing tables is the routing and NAT software logic we're interested in.
 
 ![](/static/img/vrfs-logical-view.png)
 
@@ -93,7 +93,7 @@ R4
 ip route 0.0.0.0 0.0.0.0 10.14.14.1
 ```
 
-###### **VRF-X to GLOBAL VRF NAT**
+###### **Regular Routing without NAT**
 Traffic from R2's Loopback0 (2.2.2.2) should be seen as 192.168.12.2 when it reaches R3's Loopback0 interface (3.3.3.3).
 
 Cisco's [NAT FAQ](https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html#nat-nvi) has the following to say regarding NAT NVI for VRF to global traffic.
@@ -113,14 +113,14 @@ ip route 0.0.0.0 0.0.0.0 10.12.12.1
 R3
 ip route 0.0.0.0 0.0.0.0 10.13.13.1
 ```
-Routing on R1 needs to be able to link the different routing tables.
+Routing on R1 on the other hand requires more considerations.
 
 - Traffic sourced from R2's Loopback0 2.2.2.2 arrives on R1's interface Gi0/0 in VRF-X. This traffic is destined to 3.3.3.3. VRF-X needs to have a route for 3.3.3.3. The IP 3.3.3.3 can be reached via the global routing table and next hop 10.13.13.3 which is also in the gobal routing table.
 ```
 R1
 ip route vrf VRF-X 3.3.3.3 255.255.255.255 10.13.13.3 global
 ```
-What the command above is doing is adding an entry in VRF-X routing table for destination 3.3.3.3 with next hop 10.13.13.3 in another VRF (global).
+What the command above is doing is adding an entry in VRF-X routing table for destination 3.3.3.3 with next hop 10.13.13.3 in another VRF (global). Because 10.13.13.3 is also outside VRF-X, an additional recursive lookup is required to complete the forwarding.
 ```
 R1#show ip route vrf VRF-X
 ~
@@ -167,6 +167,7 @@ R3
 *ICMP: echo reply sent, src 3.3.3.3, dst 2.2.2.2, topology BASE, dscp 0 topoid 0
 *ICMP: echo reply sent, src 3.3.3.3, dst 2.2.2.2, topology BASE, dscp 0 topoid 0
 ```
+###### **VRF-X to GLOBAL VRF NAT**
 Now, to test the NAT requirement add a NAT rule and enable NAT on the interfaces.
 ```
 R1
@@ -202,7 +203,7 @@ Packet sent with a source address of 2.2.2.2
 .....
 Success rate is 0 percent (0/5)
 ```
-On R3, observe the output of debug ip icmp. Traffic from R2 is seen to reach R3. The traffic was source transalted from 2.2.2.2 to 192.168.12.2 before getting to R3. Therfore, return packets are being sent back to 192.168.12.2 instead of 2.2.2.2.  
+On R3, observe the output of debug ip icmp. Traffic from R2 is seen to reach R3. The traffic was source translated from 2.2.2.2 to 192.168.12.2 before getting to R3. Therefore, return packets are being sent back to 192.168.12.2 instead of 2.2.2.2.  
 ```
 R3#
 *ICMP: echo reply sent, src 3.3.3.3, dst 192.168.12.2, topology BASE, dscp 0 topoid 0
@@ -211,7 +212,7 @@ R3#
 *ICMP: echo reply sent, src 3.3.3.3, dst 192.168.12.2, topology BASE, dscp 0 topoid 0
 *ICMP: echo reply sent, src 3.3.3.3, dst 192.168.12.2, topology BASE, dscp 0 topoid 0
 ```
-Review the "debug ip icmp" outputs on R1. R1 is unable to reach the destination 192.168.12.2. Since it doesn't havea route for it, traffic is dropped and host unreachable is returned to R3. In the meantime, the ICMP echos sourced from R2 timeout.
+Review the "debug ip icmp" outputs on R1. R1 is unable to reach the destination 192.168.12.2. Since it doesn't have a route for it, traffic is dropped and host unreachable is returned to R3. In the meantime, the ICMP echos sourced from R2 timeout.
 ```
 *ICMP: dst (192.168.12.2) host unreachable sent to 3.3.3.3
 *ICMP: dst (192.168.12.2) host unreachable sent to 3.3.3.3
@@ -252,7 +253,7 @@ Packet sent with a source address of 2.2.2.2
 !!!!!
 Success rate is 100 percent (5/5), round-trip min/avg/max = 2/2/3 ms
 ```
-R3's "debug ip icmp" still shows return traffic is being sent to the translated 192.168.12.2 instead of 2.2.2.2
+R3's "debug ip icmp" shows return traffic is being sent to the translated 192.168.12.2 instead of 2.2.2.2
 ```
 R3#
 *ICMP: echo reply sent, src 3.3.3.3, dst 192.168.12.2, topology BASE, dscp 0 topoid 0
