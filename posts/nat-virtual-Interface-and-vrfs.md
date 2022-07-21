@@ -287,7 +287,7 @@ R1
 ip route 4.4.4.4 255.255.255.255 10.14.14.4
 ip route 10.14.14.4 255.255.255.255 GigabitEthernet0/2
 ```
-Gi0/2 (VRF-Y) to Gi0/1 (Global) route lookup for 192.168.13.3 wil lrequire for there to be a route for 192.168.13.3 in VRF-Y. VRF-Y needs to reach in to the global table. 10.13.13.3 is already a next hop in the global routing table. Therefore, no aiding route needs to be added in the recursion.
+Gi0/2 (VRF-Y) to Gi0/1 (Global) route lookup for 192.168.13.3 will require for there to be a route for 192.168.13.3 in VRF-Y. VRF-Y needs to reach in to the global table. 10.13.13.3 is already a next hop in the global routing table. In its global table, R1 already knows which exit interface to use to reach the 10.13.13.3 next hop. Therefore, no aiding route needs to be added for the recursive lookup.
 ```
 R1
 ip route vrf VRF-Y 192.168.13.3 255.255.255.255 10.13.13.3 global
