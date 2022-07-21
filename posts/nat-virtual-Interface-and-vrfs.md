@@ -402,7 +402,7 @@ Observe the "debug ip icmp" output on R2. R2's view of the echo reply confirms t
 
 That concludes the observation of how NAT Virtual Interface and VRFs interact in Cisco IOS.
 The most important concepts other permutations of NVI and legacy NAT with VRF build on are:
-- When using legacy NAT (inside/outside domain-based), for traffic from inside to outside route lookup is done first and NAT is next. For outside to inside traffic, NAT is performed first then rotue lookup is one.
+- When using legacy NAT (inside/outside domain-based), for traffic from inside to outside route lookup is done first and NAT is next. For outside to inside traffic, NAT is performed first then route lookup is done.
 - When using NVIs, route lookup is done first and NAT is performed after.
-- Best practice or recommended configuration in complex networks is to prefer the simpler approaches that do not add routing overhead. 
-- IOS and IOS-XE use different software constructs to support NAT with VRFs. NVIs are used in Cisco IOS and VASI is utilized with Cisco IOS-XE.
+- Best practice or recommended configuration in complex networks is to prefer the simpler approaches that do not add routing overhead. If a particular NAT technique being used adds overhead, it needs to be simplified.
+- IOS and IOS-XE use different software constructs to support NAT with VRFs. NVIs are used in Cisco IOS and VRF-Aware Software Infrastrcuture (VASI) NAT is utilized in Cisco IOS-XE.
