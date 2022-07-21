@@ -7,6 +7,14 @@ tags:
   - "nat"
   - "cisco"
 ---
+This post is organized as:
+- Description of legacy (domain-based) NAT and NAT Virtual Interface (NVI)
+- Regular VRF routing without NAT
+- Scenarios
+    - VRF to Global NVI NAT
+    - Global to VRF NVI NAT
+    - VRF to VRF NVI NAt
+
 NAT operation with VRFs in Cisco IOS and IOS-XE are implemented using different software constructs.
 
 A simple implementation of NAT on a Cisco IOS router can be configured using a domain-based NAT approach. In the topology below, Gi0/0 can be defined as **inside** interface and Gi0/2 as **outside** interface. Afterwards, a simple NAT rule can be put in place as required. 
