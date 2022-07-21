@@ -399,7 +399,7 @@ Observe the "debug ip icmp" output on R2. R2's view of the echo reply confirms t
 *ICMP: echo reply rcvd, src 4.4.4.4, dst 2.2.2.2, topology BASE, dscp 0 topoid 0
 *ICMP: echo reply rcvd, src 4.4.4.4, dst 2.2.2.2, topology BASE, dscp 0 topoid 0
 ```
-
+#### KEY CONCEPTS
 That concludes the observation of how NAT Virtual Interface and VRFs interact in Cisco IOS.
 The most important concepts other permutations of NVI and legacy NAT with VRF build on are:
 - When using legacy NAT (inside/outside domain-based), for traffic from inside to outside, route lookup is done first and NAT is next. For outside to inside traffic, NAT is performed first then route lookup is done.
