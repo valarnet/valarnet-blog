@@ -13,7 +13,7 @@ This post is organized as:
 - Scenarios
     - VRF to Global NVI NAT
     - Global to VRF NVI NAT
-    - VRF to VRF NVI NAt
+    - VRF to VRF NVI NAT
 
 NAT operation with VRFs in Cisco IOS and IOS-XE are implemented using different software constructs.
 
