@@ -125,12 +125,12 @@ L        10.12.12.1/32 is directly connected, GigabitEthernet0/0
 ```
 - Traffic then reaches R3's Gi0/0 interface with source 2.2.2.2 and destination 3.3.3.3. The IP 3.3.3.3 is a locally connected interface Loopback0 on R3. 
 - On R3, return replies are generated from 3.3.3.3 destined to 2.2.2.2.
-- This traffic then arrives on R1's Gi0/1 in the global routing table. Routing lookup is done for destination 2.2.2.2. But 2.2.2.s is in VRF-X and R1 needs a way to link the global route table back to VRF-X.
+- This traffic then arrives on R1's Gi0/1 in the global routing table. Routing lookup is done for destination 2.2.2.2. But 2.2.2.2 is in VRF-X and R1 needs a way to link the global route table back to VRF-X.
 ```
 R1
 ip route 2.2.2.2 255.255.255.255 10.12.12.2
 ```
-The next-hop 10.12.12.2 is also in VRF-X. Therefore, we need to tell the global routing table the interface through which this next hop can recursively be reached i.e. via Gi0/0 in VRF-X.
+The next-hop 10.12.12.2 is also in VRF-X. Therefore, we also need to tell the global routing table the interface through which this next hop can recursively be reached i.e. via Gi0/0 in VRF-X.
 ```
 R1
 ip route 10.12.12.2 255.255.255.255 GigabitEthernet0/0
