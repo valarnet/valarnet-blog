@@ -94,15 +94,6 @@ ip route 0.0.0.0 0.0.0.0 10.14.14.1
 ```
 
 ###### **Regular Routing without NAT**
-Traffic from R2's Loopback0 (2.2.2.2) should be seen as 192.168.12.2 when it reaches R3's Loopback0 interface (3.3.3.3).
-
-Cisco's [NAT FAQ](https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html#nat-nvi) has the following to say regarding NAT NVI for VRF to global traffic.
-
-> Q. Should NAT NVI be used when NATting between an interface in global and an interface in a VRF?
-
-> A. Cisco recommends that you use legacy NAT for VRF to global NAT (ip nat inside/out) and between interfaces in the same VRF. NVI is used for NAT between different VRFs.
-
-What behavior can be expected if we do not follow this recommendation? 
 
 First, verifying plain reachability without NAT to see how the isolated logical route tables need to be linked i.e. traffic sourced from R2's 2.2.2.2 destined to R3's 3.3.3.3.
 
@@ -169,6 +160,16 @@ R3
 ```
 ###### **VRF-X to GLOBAL VRF NAT**
 Now, to test the NAT requirement add a NAT rule and enable NAT on the interfaces.
+Traffic from R2's Loopback0 (2.2.2.2) should be seen as 192.168.12.2 when it reaches R3's Loopback0 interface (3.3.3.3).
+
+Cisco's [NAT FAQ](https://www.cisco.com/c/en/us/support/docs/ip/network-address-translation-nat/26704-nat-faq-00.html#nat-nvi) has the following to say regarding NAT NVI for VRF to global traffic.
+
+> Q. Should NAT NVI be used when NATting between an interface in global and an interface in a VRF?
+
+> A. Cisco recommends that you use legacy NAT for VRF to global NAT (ip nat inside/out) and between interfaces in the same VRF. NVI is used for NAT between different VRFs.
+
+What behavior can be expected if we do not follow this recommendation? 
+
 ```
 R1
 ip nat source static 2.2.2.2 192.168.12.2 vrf VRF-X
@@ -220,7 +221,7 @@ Review the "debug ip icmp" outputs on R1. R1 is unable to reach the destination 
 *ICMP: dst (192.168.12.2) host unreachable sent to 3.3.3.3
 *ICMP: dst (192.168.12.2) host unreachable sent to 3.3.3.3
 ```
-The global routing table on R1 remains unchanged as before
+The global routing table on R1 remains unchanged as before in the plain routing step.
 ```
 R1#sh ip route
 ~
