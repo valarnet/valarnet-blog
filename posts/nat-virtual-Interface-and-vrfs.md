@@ -93,7 +93,7 @@ R4
 ip route 0.0.0.0 0.0.0.0 10.14.14.1
 ```
 
-###### **Regular Routing without NAT**
+#### **Regular Routing without NAT**
 
 First, verifying plain reachability without NAT to see how the isolated logical route tables need to be linked i.e. traffic sourced from R2's 2.2.2.2 destined to R3's 3.3.3.3.
 
@@ -158,7 +158,7 @@ R3
 *ICMP: echo reply sent, src 3.3.3.3, dst 2.2.2.2, topology BASE, dscp 0 topoid 0
 *ICMP: echo reply sent, src 3.3.3.3, dst 2.2.2.2, topology BASE, dscp 0 topoid 0
 ```
-###### **VRF-X to GLOBAL VRF NAT**
+#### **VRF-X to GLOBAL VRF NAT**
 Now, to test the NAT requirement add a NAT rule and enable NAT on the interfaces.
 Traffic from R2's Loopback0 (2.2.2.2) should be seen as 192.168.12.2 when it reaches R3's Loopback0 interface (3.3.3.3).
 
@@ -272,7 +272,7 @@ R2#
 *ICMP: echo reply rcvd, src 3.3.3.3, dst 2.2.2.2, topology BASE, dscp 0 topoid 0
 *ICMP: echo reply rcvd, src 3.3.3.3, dst 2.2.2.2, topology BASE, dscp 0 topoid 0
 ```
-###### **Global VRF to VRF-Y NAT** 
+#### **Global VRF to VRF-Y NAT** 
 Traffic from R3's Loopback0 (3.3.3.3) interface should be seen as 192.168.13.3 when it reaches R4's Loopback0 interface (4.4.4.4).
 
 Global to VRF-Y traffic using NVI will have the following pattern and requirements.
@@ -337,7 +337,7 @@ R3#
 *ICMP: echo reply rcvd, src 4.4.4.4, dst 3.3.3.3, topology BASE, dscp 0 topoid 0
 *ICMP: echo reply rcvd, src 4.4.4.4, dst 3.3.3.3, topology BASE, dscp 0 topoid 0
 ```
-###### **VRF-X to VRF-Y NAT** 
+#### **VRF-X to VRF-Y NAT** 
 Traffic from R2's Loopback0 (2.2.2.2) interface should be seen as 10.14.14.1 when it reaches R4's Loopback interface (4.4.4.4).
 
 When using NVIs, same rules apply. Route lookup first, NAT next.
