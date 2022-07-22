@@ -27,7 +27,7 @@ module.exports = (config) => {
   config.addPlugin(syntaxHighlight);
 }
 ```
-Also added the reference in the index file.
+Also added the reference in the base.njk file.
 ```html
   <link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet">
 ```
