@@ -31,7 +31,7 @@ h1 {
 }
 @media screen and (min-width: 640px) {
   h1 {
-    font-size: 2.3rem;
+    font-size: 2.313rem;
   }
 }
 h2 {
@@ -39,7 +39,7 @@ h2 {
 }
 @media screen and (min-width: 640px) {
   h2 {
-    font-size: 2.488rem;
+    font-size: 2.011rem;
   }
 }
 h3 {
@@ -47,7 +47,7 @@ h3 {
 }
 @media screen and (min-width: 640px) {
   h3 {
-    font-size: 2.074rem;
+    font-size: 1.749rem;
   }
 }
 h4 {
@@ -55,7 +55,7 @@ h4 {
 }
 @media screen and (min-width: 640px) {
   h4 {
-    font-size: 1.728rem;
+    font-size: 1.521rem;
   }
 }
 h5 {
@@ -63,7 +63,7 @@ h5 {
 }
 @media screen and (min-width: 640px) {
   h5 {
-    font-size: 1.44rem;
+    font-size: 1.322rem;
   }
 }
 h6 {
@@ -71,7 +71,7 @@ h6 {
 }
 @media screen and (min-width: 640px) {
   h6 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 }
 small {
@@ -79,7 +79,7 @@ small {
 }
 @media screen and (min-width: 640px) {
   small {
-    font-size: 0.833rem;
+    font-size: 0.87rem;
   }
 }
 a {
@@ -246,7 +246,7 @@ body.dark .card {
 }
 @media screen and (min-width: 640px) {
   .card__title {
-    font-size: 1.44rem;
+    font-size: 1.322rem;
   }
 }
 .card__date {
@@ -256,7 +256,7 @@ body.dark .card {
 }
 @media screen and (min-width: 640px) {
   .card__date {
-    font-size: 0.833rem;
+    font-size: 0.87rem;
   }
 }
 body.dark .card__date {
