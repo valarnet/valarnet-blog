@@ -10,7 +10,7 @@ tags:
 When performing flow traces on a FortiGate firewall, one of the messages that may get thrown is the "iprope_in_check() check failed, drop"
 
 Flow trace is typically done by executing a variation of these commands with the filters as desired.
-```
+```md
 diagnose debug flow filter saddr [srcIpAddress]
 diagnose debug flow filter daddr [dstIpAddress]
 diagnose debug flow filter port [portNumberxxx]
@@ -28,7 +28,7 @@ By default, there should be no policy configured under local-in-policy but when 
 For instance, if there is a trusted host configuration put in place that allows certain IP addresses to access the GUI or SSH of the FortiGate device, and there is also a local-in-policy for the same IP, these settings may step on each other. Observed on FortiOS 6.2.11
 
 The trusted hosts config:
-```
+```md
 config system admin
     edit "admin"
         set trusthost1 "10.16.2.15 255.255.255.255"
@@ -39,7 +39,7 @@ config system admin
 end
 ```
 Configuration of a policy directed towards the firewall's local control plane.
-```
+```md
 config firewall local-in-policy
     edit 1
         set interface "port1"
