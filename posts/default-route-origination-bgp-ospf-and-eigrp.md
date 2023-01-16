@@ -22,14 +22,15 @@ tags:
 3. The *default-information originate* can be used with route-map to check for conditions of links or other routes presence before advertising default. For example, if the link to ISP1 is still in my routing table, advertise default to downstream neighbors. If the link is down, stop advertising the default route.
 4. By default, ABRs generate a default into stub areas. Default route appears as O IA.
 5. Cisco routes don't advertise external default routes into an NSSA area even when using the *default-information originate always*. Therefore:
-  5.1 Advertise type-7 NSSA default route into the NSSA area. Use *area nssa default-information originate* on the ABR.
+>  5.1 Advertise type-7 NSSA default route into the NSSA area. Use *area nssa default-information originate* on the ABR.
   
-  5.2 Make the area **totally NSSA**. Use *area X nssa no-summary* on the ABR. This command denies type-3 or type-4 LSAs from entering area X. It injects a default route into the area as a type-3 summary LSA.
+>  5.2 Make the area **totally NSSA**. Use *area X nssa no-summary* on the ABR. This command denies type-3 or type-4 LSAs from entering area X. It injects a default route into the area as a type-3 summary LSA.
+
 6. **Can summarization be used on its own as a default route advertisement mechanism?** Baseline fact to know: OSPF supports twp types of summarization: inter-area summarization and external route summarization. OSPF can summarize internal routes only at ABRs.and external routes only at ASBRs. (Important: this behavior contrasts with how EIGRP performs summarization.) Therefore:
 
-  6.1 On ASBRs, if attempting to summarize external routes (i.e. type-5 or type-7) using just *"summary-address 0.0.0.0 0.0.0.0"* IOS will take the command, by default add the *not-advertise* option to it, and filters out external LSAs from being advertised to the nieghbor. However, it does not advertise a default route. It is required to use the *default-information originate*, if a non-OSPF default is already present in the routing table, or the *default-information originate always* variant without regard to a non-OSPF default route's presence. In contrast, if *ip summary-address* command is used on an EIGRP itnerface, a default route is propagated to the neighbor via that interface.
+> 6.1 On ASBRs, if attempting to summarize external routes (i.e. type-5 or type-7) using just *"summary-address 0.0.0.0 0.0.0.0"* IOS will take the command, by default add the *not-advertise* option to it, and filters out external LSAs from being advertised to the nieghbor. However, it does not advertise a default route. It is required to use the *default-information originate*, if a non-OSPF default is already present in the routing table, or the *default-information originate always* variant without regard to a non-OSPF default route's presence. In contrast, if *ip summary-address* command is used on an EIGRP itnerface, a default route is propagated to the neighbor via that interface.
 
-  6.2 On ABRs, if attempting to summarize between areas using just *"area X range 0.0.0.0 0.0.0.0"*, IOS will complain *"% OSPF: Cannot add this range as 0.0.0.0/0 represents default"* Therefore, this does not allow for default route advertisement.
+> 6.2 On ABRs, if attempting to summarize between areas using just *"area X range 0.0.0.0 0.0.0.0"*, IOS will complain *"% OSPF: Cannot add this range as 0.0.0.0/0 represents default"* Therefore, this does not allow for default route advertisement.
 
 ### EIGRP Default Origination
 1. Using *redistribution.* A statically created or a default route learned via another routing protocol must be present in the routing table. The default route advertised using this method will be an external i.e. D EX route.
