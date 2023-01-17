@@ -74,7 +74,7 @@ The conversion places the new commands only in the running configuration. After 
 
 **Further Reading**:
 
-[Configure EIGRP Named-Mode](https://www.cisco.com/c/en/us/support/docs/ip/enhanced-interior-gateway-routing-protocol-eigrp/200156-Configure-EIGRP-Named-Mode.html)
-[EIGRP Wide Metrics](https://content.cisco.com/chapter.sjs?uri=/searchable/chapter/content/en/us/td/docs/ios-xml/ios/iproute_eigrp/configuration/15-mt/ire-15-mt-book/ire-wid-met.html.xml)
-[Understanding the EIGRP comamnd, "metric rib-scale"](https://ine.com/blog/2018-07-31-understanding-the-eigrp-command-metric-rib-scale)
+- [Configure EIGRP Named-Mode](https://www.cisco.com/c/en/us/support/docs/ip/enhanced-interior-gateway-routing-protocol-eigrp/200156-Configure-EIGRP-Named-Mode.html)
+- [EIGRP Wide Metrics](https://content.cisco.com/chapter.sjs?uri=/searchable/chapter/content/en/us/td/docs/ios-xml/ios/iproute_eigrp/configuration/15-mt/ire-15-mt-book/ire-wid-met.html.xml)
+- [Understanding the EIGRP comamnd, "metric rib-scale"](https://ine.com/blog/2018-07-31-understanding-the-eigrp-command-metric-rib-scale)
 
