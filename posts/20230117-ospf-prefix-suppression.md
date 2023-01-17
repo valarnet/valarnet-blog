@@ -7,13 +7,11 @@ tags:
   - "ospf"
 ---
 
-OSPF prefix-suppression is a feature used to reduce the number of LSAs that are flooded within an area. This helps reduce the number of Type-1 (Router) and Type-2 (Network) LSAs advertised. 
+OSPF prefix-suppression is a feature used to reduce the number of LSAs that are flooded within an area. This helps reduce the number of Type-1 (Router) and Type-2 (Network) LSAs advertised. Fewer number of LSAs means SPF calculation can become faster.
 
 It does not suppress Type-3 (Summary), Type-4 (Summary ASBR), Type 5  (External) or Type 7 (NSSA External) LSAs.
 
-Fewer number of LSAs means SPF calculation can become faster. 
-
-OSPF prefix-suppression can be enabled globally on a router or on per interface basis.
+OSPF prefix-suppression can be enabled globally on a router or on per-interface basis.
 
 A use-case for OSPF prefix-suppression might be if communication is only expected between end hosts. In this case, advertising the transit links between the routers to all routers is not needed.
 
