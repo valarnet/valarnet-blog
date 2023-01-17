@@ -18,7 +18,7 @@ tags:
 ### OSPF Default Origination
 **Fun fact:** A default route cannot be redistributed into OSPF. But it can be "mimicked."
 1. Using *"default-information originate"* if the advertising router has a non-OSPF default route in its routing table.
-2. Using *"default-information originate awalys"* if the advertising router does NOT have a non-OSPF default route in its routing table. This is a functional equivalent of the **"Fun fact"** above.
+2. Using *"default-information originate always"* if the advertising router does NOT have a non-OSPF default route in its routing table. This is a functional equivalent of the **"Fun fact"** above.
 3. The *default-information originate* can be used with route-map to check for conditions of links or other routes presence before advertising default. For example, if the link to ISP1 is still in my routing table, advertise default to downstream neighbors. If the link is down, stop advertising the default route.
 4. By default, ABRs generate a default into stub areas. Default route appears as O IA.
 5. Cisco routes don't advertise external default routes into an NSSA area even when using the *default-information originate always*. Therefore:
