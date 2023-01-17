@@ -26,7 +26,7 @@ tags:
   
 >  5.2 Make the area **totally NSSA**. Use *area X nssa no-summary* on the ABR. This command denies type-3 or type-4 LSAs from entering area X. It injects a default route into the area as a type-3 summary LSA.
 
-6. **Can summarization be used on its own as a default route advertisement mechanism?** Baseline fact to know: OSPF supports twp types of summarization: inter-area summarization and external route summarization. OSPF can summarize internal routes only at ABRs and external routes only at ASBRs. (Important: this behavior contrasts with how EIGRP performs summarization.) Therefore:
+6. **Can summarization be used on its own as a default route advertisement mechanism?** Baseline fact to know: OSPF supports two types of summarization: inter-area summarization and external route summarization. OSPF can summarize internal routes only at ABRs and external routes only at ASBRs. (Important: this behavior contrasts with how EIGRP performs summarization.) Therefore:
 
 > 6.1 On ASBRs, if attempting to summarize external routes (i.e. type-5 or type-7) using just *"summary-address 0.0.0.0 0.0.0.0"* IOS will take the command, by default add the *not-advertise* option to it, and filters out external LSAs from being advertised to the nieghbor. However, it does not advertise a default route.
 
