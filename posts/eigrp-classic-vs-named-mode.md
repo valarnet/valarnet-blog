@@ -11,7 +11,7 @@ In classic EIGRP mode, to configure IPv4 and IPv6, it is required to configure s
 
 In EIGRP Named-Mode, multiple address families and VRFs are supported under the same EIGRP instance for both IPv4 and IPv6.
 
-```
+```md
 router eigrp ABC-COMPANY
   address-family ipv4 unicast autonomous-system 100
     af-interface Gi0/0
@@ -29,11 +29,13 @@ router eigrp ABC-COMPANY
 ```
 
 EIGRP Named-Mode has three main configuration modes where the majority of configs are made:
-	- Address family config mode (*config-router-af#*)
-	- Address family interface config mode (*config-router-af-interface#*)
-	- Address family topology config mode (*config-router-af-topology#*)
+>	- Address family config mode (*config-router-af#*)
+>	- Address family interface config mode (*config-router-af-interface#*)
+>	- Address family topology config mode (*config-router-af-topology#*)
 
-EIGRP Named-Mode uses wide metrics which allows it to support up to 4.2Tbps speed interfaces and utlizes a different formula for the Diffusion Update Algorithm (DUAL) cost computation. These are 64-bit metric calculations. In contrast, EIGRP classic mode supports only 32-bit cost metric calculations which makes it limited to account for speeds of up to 10Gbps interfaces.
+EIGRP Named-Mode uses wide metrics which allows it to support up to 4.2Tbps speed interfaces and utlizes a different formula for the Diffusion Update Algorithm (DUAL) cost computation. These are 64-bit metric calculations. 
+
+In contrast, EIGRP classic mode supports only 32-bit cost metric calculations which makes it limited to account for speeds of up to 10Gbps interfaces.
 
 The traditional EIGRP cost composite cost metric uses the formula:
 **Metric = 256 * ((K1 * Scaled Bw) + (K2 * Scaled Bw)/(256 – Load) + (K3 * Scaled Delay) * (K5/(Reliability + K4)))**
@@ -58,7 +60,7 @@ The Minimum throughput = (10^7 * 65,536)/ Bw in Kbps
 Conversion from classic to named-mode can be performed without causing network flaps or without restarting the EIGRP process. Conversion process is supported for both IPv4 and IPv6 and is not auto-reversible. That is, converting from named-mode back to the classic mode is not supported.
 
 The eigrp upgrade-cli command is available only under EIGRP classic configuration mode. 
-```
+```md
 router eigrp 100
   eigrp upgrade-cli
 ```
@@ -66,7 +68,6 @@ router eigrp 100
 If you have multiple EIGRP ASes, the process needs to be repeated for every AS you want to convert.
 
 The conversion places the new commands only in the running configuration. After the conversion completes, you must use the "copy run start" or "write mem" commands to save the changes to NVRAM. 
-
 
 **Further Reading**:
 Configure EIGRP Named-Mode https://www.cisco.com/c/en/us/support/docs/ip/enhanced-interior-gateway-routing-protocol-eigrp/200156-Configure-EIGRP-Named-Mode.html

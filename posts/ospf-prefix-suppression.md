@@ -16,13 +16,13 @@ OSPF prefix-suppression can be enabled globally on a router or on per interface 
 A use-case for OSPF prefix-suppression might be if communication is only expected between end hosts. In this case, advertising the transit links between the routers to all routers is not needed.
 
 Enabling prefix-suppression globally on a router:
-```
+```md
 router ospf 1
 	prefix-suppression
 ```
 
 Enabling prefix-suppression on per-interface basis:
-```
+```md
 interface Gi0/0
 	ip ospf prefix-suppression
 ```
