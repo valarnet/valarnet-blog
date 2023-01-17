@@ -35,7 +35,7 @@ In Cisco IOS-XE, the software construct that makes inter-VRF NAT possible is VRF
 
 In Cisco IOS with VRFs, NAT Virtual Interface (NVI) is created to facilitate the translation process between VRFs.
 
-**Using NVIs, translation is performed after route lookup decision is made.**
+**Using NVIs, translation is performed after route lookup decision is made. NVI = route lookup first, NAT next.**
 
 Consider the following topology. 
 
