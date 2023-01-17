@@ -34,6 +34,6 @@ show ip ospf database network
 show ip route
 ```
 
-Further Reading:
+**Further Reading:**
 
-OSPF Prefix-Suppression https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/213404-open-shortest-path-first-prefix-suppress.html
+[OSPF Prefix-Suppression](https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/213404-open-shortest-path-first-prefix-suppress.html)
