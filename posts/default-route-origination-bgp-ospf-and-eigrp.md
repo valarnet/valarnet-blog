@@ -28,7 +28,8 @@ tags:
 
 6. **Can summarization be used on its own as a default route advertisement mechanism?** Baseline fact to know: OSPF supports twp types of summarization: inter-area summarization and external route summarization. OSPF can summarize internal routes only at ABRs and external routes only at ASBRs. (Important: this behavior contrasts with how EIGRP performs summarization.) Therefore:
 
-> 6.1 On ASBRs, if attempting to summarize external routes (i.e. type-5 or type-7) using just *"summary-address 0.0.0.0 0.0.0.0"* IOS will take the command, by default add the *not-advertise* option to it, and filters out external LSAs from being advertised to the nieghbor. However, it does not advertise a default route. 
+> 6.1 On ASBRs, if attempting to summarize external routes (i.e. type-5 or type-7) using just *"summary-address 0.0.0.0 0.0.0.0"* IOS will take the command, by default add the *not-advertise* option to it, and filters out external LSAs from being advertised to the nieghbor. However, it does not advertise a default route.
+
 > It is required to use the *default-information originate*, if a non-OSPF default is already present in the routing table, or the *default-information originate always* variant without regard to a non-OSPF default route's presence. In contrast, if *ip summary-address* command is used on an EIGRP interface, a default route is propagated to the neighbor via that interface.
 
 > 6.2 On ABRs, if attempting to summarize between areas using just *"area X range 0.0.0.0 0.0.0.0"*, IOS will complain *"% OSPF: Cannot add this range as 0.0.0.0/0 represents default"* Therefore, this does not allow for default route advertisement.
