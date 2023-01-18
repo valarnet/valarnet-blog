@@ -17,6 +17,6 @@ Look around this blog and if you feel like it, leave any kind of feedback.
 
 Two quotes I like most:
 
-"What you aim at determines what you see." - Unknown
+*"What you aim at determines what you see." - Unknown*
 
-"The impediment to action advances action. What stands in the way becomes the way." - Marcus Aurelius
+*"The impediment to action advances action. What stands in the way becomes the way." - Marcus Aurelius*
