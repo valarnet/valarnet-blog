@@ -1,10 +1,10 @@
 ---
 title: "Linux Commands to Use with the CCIE Host VM"
-date: "2023-01-17"
+date: "2023-01-18"
 categories: 
   - "valarnet"
 tags: 
-  - "ospf"
+  - "linux"
 ---
 
 The CCIE Host VM is a Debian-based linux system that has been customized and stripped of many functionalities. Basic knowledge of how to deal with linux interfaces and networking can be useful in a test where every minute counts.
