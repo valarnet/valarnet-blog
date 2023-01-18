@@ -9,14 +9,14 @@ eleventyNavigation:
 ---
 
 
-I am a Network Engineer with a decade plus experience in design, implementation, and administration of network solutions. I hold a variety of certifications from vendors such as Cisco, Fortinet, AWS, and  Google.
+I am a Network Engineer with a decade plus experience designing, implementating, and administering network solutions. I hold multiple certifications from vendors such as Cisco, Fortinet, AWS, and  Google.
 
-The name of this blog makes a reference to J.R.R. Tolkien (Valar) and another realm I love: networking (net). 
+The name of this blog makes a reference to J.R.R. Tolkien's world (Valar) and another realm I love: networking (net). 
 
 Look around this blog and if you feel like it, leave any kind of feedback.
 
 Two quotes I like:
 
-*"What you aim at determines what you see." - Unknown*
+*"What you aim at determines what you see." - Jordan Peterson*
 
 *"The impediment to action advances action. What stands in the way becomes the way." - Marcus Aurelius*
