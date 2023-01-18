@@ -16,8 +16,6 @@ cisco@host1: uname -a
 Linux host1 5.5.0.1 amd64 #1 SMP Debian 5.5.13-2 (2020-03-30) x86_64 GNU/Linux
 ```
 
-### Linux commands to use on the CCIE Host VM
-
 The LX Terminal comes pre-installed on the VM.
 
 To display the host's link or IP address information, there are multiple options. Issue each command and in the outputs you'll notice differences between the displayed interfaces with varying levels of detail provided.
