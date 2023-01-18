@@ -126,7 +126,7 @@ iface ens192 inet static
 Test a reboot now and the interface should come up automatically with the configured IP information.
 
 ### DHCP on Linux VM Host
-The method described above is usable whenwe are configuring IP address is statically.
+The method described above is usable when we are configuring IP address statically.
 
 However, if a DHCP server is used to provide IP addressing, DHCP request and releases can be triggered from the host VM by using the dhclient command. The -r is for the release option and -v is to display verbose output when a DHCP request runs.
 ```md
