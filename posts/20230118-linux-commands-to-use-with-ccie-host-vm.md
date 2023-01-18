@@ -9,7 +9,7 @@ tags:
 
 The CCIE Host VM is a Debian-based linux system that has been customized and stripped of many functionalities. Basic knowledge of how to deal with linux interfaces and networking can be useful in a test where every minute counts.
 
-The VM I downloaded for use with EVE-NG (following reference from Cisco [webinar](https://learningnetwork.cisco.com/s/question/0D53i000017uwFnCAI/ccie-enterprise-infrastructure-build-your-own-lab-and-beyond-post-webinar-open-discussion-thread)) is converted by Jordi Schlooz and can be found at [this](https://www.theansweris101010.network/its-here-the-ccie-lab-image/) link
+The VM I downloaded for use with EVE-NG (following reference from Cisco [webinar](https://learningnetwork.cisco.com/s/question/0D53i000017uwFnCAI/ccie-enterprise-infrastructure-build-your-own-lab-and-beyond-post-webinar-open-discussion-thread)) is converted by Jordi Schlooz and can be found at [this](https://www.theansweris101010.network/its-here-the-ccie-lab-image/){:target="_blank"} link
 
 ```md
 cisco@host1: uname -a
@@ -51,7 +51,7 @@ To save nano editor changes hit Ctrl X then Y and hit ENTER. To discard the chan
 ```md
 sudo gedit /etc/network/interfaces
 ```
-To save the changes, there is a "Save" button on the top right corner of the editor window.
+To save the changes, there is a "Save" button at the top right corner of the editor window.
 
 Add the required interface and IP address information for the interface. Typically, ens192 is commonly used in the practice labs. *Note: As is the case with the VM image I have in my EVE-NG, the VM may be using different interface naming other than ens192 such as ens3 or ens4. But that is minor. Just make sure to identify and use the correct interface names in the configuration file.*
 ```md
