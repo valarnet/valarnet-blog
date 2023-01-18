@@ -9,7 +9,7 @@ eleventyNavigation:
 ---
 
 
-I am a Network Engineer with a decade plus experience designing, implementating, and administering network solutions. I hold multiple certifications from vendors such as Cisco, Fortinet, AWS, and  Google. [LinkedIn](https://www.linkedin.com/in/ashenafi-w-bekele-4938a424)
+I am a Network Engineer with a decade plus experience designing, implementating, and administering network solutions. I hold multiple certifications from vendors such as Cisco, Fortinet, AWS, and  Google. [My LinkedIn Profile](https://www.linkedin.com/in/ashenafi-w-bekele-4938a424)
 
 The name of this blog makes a reference to J.R.R. Tolkien's world (Valar) and another realm I enjoy: networking (net). 
 
