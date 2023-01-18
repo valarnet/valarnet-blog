@@ -23,7 +23,7 @@ router eigrp ABC-COMPANY
       <if-level-configs-such-as-auth-bandwidth%-hello-hold-time-nexthop-passive-etc.>
     exit-af-interface
     topology base
-      <topology-level-configs-such-as-redistribution-distance-offset-list-dimers-etc.>
+      <topology-level-configs-such-as-redistribution-distance-offset-list-timers-etc.>
     exit-af-topology
   exit-address-family
 ```
@@ -33,7 +33,7 @@ EIGRP Named-Mode has three main configuration modes where the majority of config
 >	- Address family interface config mode (*config-router-af-interface#*)
 >	- Address family topology config mode (*config-router-af-topology#*)
 
-EIGRP Named-Mode uses wide metrics which allows it to support up to 4.2Tbps speed interfaces and utlizes a different formula for the Diffusion Update Algorithm (DUAL) cost computation. These are 64-bit metric calculations. 
+EIGRP Named-Mode uses wide metrics which allows it to support up to 4.2Tbps speed interfaces and utlizes a different formula for the EIGRP metric computation. These are 64-bit metric calculations. 
 
 In contrast, EIGRP classic mode supports only 32-bit cost metric calculations which makes it limited to account for speeds of up to 10Gbps interfaces.
 

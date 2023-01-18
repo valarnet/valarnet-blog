@@ -7,7 +7,7 @@ tags:
   - "terraform"
 ---
 
-This is a continuation of [the first part](/posts/getting-started-with-terraform-background/) in this series where we outlined why Terraform exists and what it does.
+This is a continuation of [the first part](/posts/20220520-part-1-getting-started-with-terraform-background/) in this series where we outlined why Terraform exists and what it does.
 
 In this part of the series, we discuss:
 

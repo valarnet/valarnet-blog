@@ -11,9 +11,9 @@ This is the fourth part in the Terraform series.
 
 The previous three parts are at the links below if you wish to read them:
 
-- [Part 1: Terraform - Getting Started](/posts/part-1-getting-started-with-terraform-background/)
-- [Part 2: Terraform - Fundamentals](/posts/part-2-terraform-fundamental-concepts/)
-- [Part 3: Terraform - Installation](/posts/part-3-terraform-installation/)
+- [Part 1: Terraform – Getting Started](/posts/20220520-part-1-getting-started-with-terraform-background/)
+- [Part 2: Terraform – Fundamentals](/posts/20220521-part-2-terraform-fundamental-concepts/)
+- [Part 3: Terraform – Installation](/posts/20220521-part-3-terraform-installation/)
 
 In this post, we discuss configuration and configuration files as a key step to utilizing Terraform. We will also deploy and destroy our first infrastructure using Terraform.
 

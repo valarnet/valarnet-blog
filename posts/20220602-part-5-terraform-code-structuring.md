@@ -12,10 +12,10 @@ In this part of the series, we look at approaches to structuring terraform code.
 
 As usual, if you haven't read the previous parts I have linked them below.
 
-- [Part 1: Terraform – Getting Started](/posts/part-1-getting-started-with-terraform-background/)
-- [Part 2: Terraform – Fundamentals](/posts/part-2-terraform-fundamental-concepts/)
-- [Part 3: Terraform – Installation](/posts/part-3-terraform-installation/)
-- [Part 4: Terraform - Configuration Files](/posts/part-4-terraform-configuration-basics/)
+- [Part 1: Terraform – Getting Started](/posts/20220520-part-1-getting-started-with-terraform-background/)
+- [Part 2: Terraform – Fundamentals](/posts/20220521-part-2-terraform-fundamental-concepts/)
+- [Part 3: Terraform – Installation](/posts/20220521-part-3-terraform-installation/)
+- [Part 4: Terraform – Configuration Files](/posts/20220525-part-4-terraform-configuration-basics/)
 
 This post assumes requisite knowledge of networking. To maintain a better flow, it is also highly recommended to read the previous posts for a background on terraform.
 

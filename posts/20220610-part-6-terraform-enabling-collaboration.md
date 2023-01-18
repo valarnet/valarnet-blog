@@ -11,11 +11,11 @@ This is the sixth in a series of posts about Terraform.
 
 The previous parts are linked below
 
-- [Part 1: Terraform – Getting Started](/posts/part-1-getting-started-with-terraform-background/)
-- [Part 2: Terraform – Fundamentals](/posts/part-2-terraform-fundamental-concepts/)
-- [Part 3: Terraform – Installation](/posts/part-3-terraform-installation/)
-- [Part 4: Terraform – Configuration Files](/posts/part-4-terraform-configuration-basics/)
-- [Part 5: Terraform - Code Structuring](/posts/part-5-terraform-code-structuring/)
+- [Part 1: Terraform – Getting Started](/posts/20220520-part-1-getting-started-with-terraform-background/)
+- [Part 2: Terraform – Fundamentals](/posts/20220521-part-2-terraform-fundamental-concepts/)
+- [Part 3: Terraform – Installation](/posts/20220521-part-3-terraform-installation/)
+- [Part 4: Terraform – Configuration Files](/posts/20220525-part-4-terraform-configuration-basics/)
+- [Part 5: Terraform – Code Structuring](/posts/20220602-part-5-terraform-code-structuring/)
 
 In prior parts of this blog series, we noted terraform uses [backends](/posts/part-6-terraform-enabling-collaboration/) to store information about state of the infrastructure. We also stated the backend can be saved locally or remotely. The default backend behavior is to save in local. We can change this.
 

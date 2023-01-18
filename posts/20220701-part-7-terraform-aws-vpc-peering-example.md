@@ -10,12 +10,12 @@ tags:
 
 This post will finish up building the AWS VPC peering topology example described in [part 5](/posts/part-5-terraform-code-structuring/) of this Terraform series. For context, it is recommended to check that out.
 
-- [Part 1: Terraform – Getting Started](/posts/part-1-getting-started-with-terraform-background/)
-- [Part 2: Terraform – Fundamentals](/posts/part-2-terraform-fundamental-concepts/)
-- [Part 3: Terraform – Installation](/posts/part-3-terraform-installation/)
-- [Part 4: Terraform – Configuration Files](/posts/part-4-terraform-configuration-basics/)
-- [Part 5: Terraform – Code Structuring](/posts/part-5-terraform-code-structuring/)
-- [Part 6: Terraform - Enabling Collaboration](/posts/part-6-terraform-enabling-collaboration/)
+- [Part 1: Terraform – Getting Started](/posts/20220520-part-1-getting-started-with-terraform-background/)
+- [Part 2: Terraform – Fundamentals](/posts/20220521-part-2-terraform-fundamental-concepts/)
+- [Part 3: Terraform – Installation](/posts/20220521-part-3-terraform-installation/)
+- [Part 4: Terraform – Configuration Files](/posts/20220525-part-4-terraform-configuration-basics/)
+- [Part 5: Terraform – Code Structuring](/posts/20220602-part-5-terraform-code-structuring/)
+- [Part 6: Terraform - Enabling Collaboration](/posts/20220610-part-6-terraform-enabling-collaboration/)
 
 To make the description of the steps clearer and the code readable, I've structured the code as follows.
 
