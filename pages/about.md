@@ -15,7 +15,7 @@ The name of this blog makes a reference to J.R.R. Tolkien (Valar) and another re
 
 Look around this blog and if you feel like it, leave any kind of feedback.
 
-Two quotes I like most:
+Two quotes I like:
 
 *"What you aim at determines what you see." - Unknown*
 
