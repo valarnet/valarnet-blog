@@ -11,6 +11,6 @@ eleventyNavigation:
 
 I am a Network Engineer with 10+ years of experience in design, implementation, and administration of network solutions. I hold a variety of certifications from many vendors such as Cisco, Fortinet, AWS, and  Google.
 
-The name of this blog makes a reference to J.R.R. Tolkien (Valar) and another realm I love: networking (net). I’ve been obsessed with Tolkien’s world-building genius ever since I stumbled upon it by chance decades ago. Thus kicking off my journey with the events of the Third Age and working my way to the preceding ages.
+The name of this blog makes a reference to J.R.R. Tolkien (Valar) and another realm I love: networking (net). 
 
-Look around this blog and if you feel like it, give me feedback. Let me know what helps, what isn’t right (typos, corrections, missed details, etc.)
+Look around this blog and if you feel like it, leave any kind of feedback.

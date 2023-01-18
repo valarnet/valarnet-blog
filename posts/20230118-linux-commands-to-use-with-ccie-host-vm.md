@@ -125,7 +125,7 @@ iface ens192 inet static
 	gateway 192.168.1.1
 ```
 
-Test a reboot now and the interface should come up automatically with the ocnfigured IP information.
+Test a reboot now and the interface should come up automatically with the configured IP information.
 
 ### DHCP on Linux VM Host
 The method described above is usable whenwe are configuring IP address is statically.
