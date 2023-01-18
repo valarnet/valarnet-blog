@@ -43,7 +43,7 @@ The traditional EIGRP cost composite cost metric uses the formula:
 
 Where the EIGRP vector metrics bandwidth, delay, load, MTU, and reliability are tuned with the appropriate K-values. By default, only bandwidth and delay are used in the calculation.
 
-The Scaled Bw = 10^7/minimum BW in Kbps. Whereas, the Scaled Delay is sum of delays on a path counted in tens of microseconds.
+The Scaled Bw = 10^7/minimum BW in **Kbps.** Whereas, the Scaled Delay is sum of delays on a path counted in **tens of microseconds.**
 
 EIGRP Named-Mode changes up the metric calculation as:
 
@@ -54,7 +54,7 @@ Notice the K-values go as high as K6 in EIGRP Named-Mode. K6 is an added K-value
 Therefore, the default metric calculation can be reduced to:
 **Metric = (K1 * Minimum Throughput) + (K3 * Total Latency)**
 
-Minimum throughput is derived from the minimum bandwidth on a path whereas the total latency is derived from sum of delay values on a path (counted in pico seconds).
+Minimum throughput is derived from the minimum bandwidth on a path whereas the total latency is derived from sum of delay values on a path **(counted in pico seconds).**
 
 The Minimum throughput = (10^7 * 65,536)/ Bw in Kbps 
 
