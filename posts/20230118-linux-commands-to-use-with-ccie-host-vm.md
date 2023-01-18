@@ -9,7 +9,7 @@ tags:
 
 The CCIE Host VM is a Debian-based linux system that has been customized and stripped of many functionalities. Basic knowledge of how to deal with linux interfaces and networking can be useful in a test where every minute counts.
 
-The VM I downloaded for use with EVE-NG (following reference from Cisco [webinar](https://learningnetwork.cisco.com/s/question/0D53i000017uwFnCAI/ccie-enterprise-infrastructure-build-your-own-lab-and-beyond-post-webinar-open-discussion-thread)) is converted by Jordi Schlooz and can be found at [this](https://www.theansweris101010.network/its-here-the-ccie-lab-image/){:target="_blank"} link
+The VM I downloaded for use with EVE-NG (following reference from Cisco [webinar](https://learningnetwork.cisco.com/s/question/0D53i000017uwFnCAI/ccie-enterprise-infrastructure-build-your-own-lab-and-beyond-post-webinar-open-discussion-thread)) is converted by Jordi Schlooz and can be found at [this](https://www.theansweris101010.network/its-here-the-ccie-lab-image/) link
 
 ```md
 cisco@host1: uname -a
