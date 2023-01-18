@@ -15,7 +15,7 @@ The name of this blog makes a reference to J.R.R. Tolkien's world (Valar) and an
 
 Look around this blog and if you feel like it, leave any kind of feedback.
 
-Two quotes I like:
+**Two quotes I like:**
 
 *"What you aim at determines what you see." - Jordan Peterson*
 
