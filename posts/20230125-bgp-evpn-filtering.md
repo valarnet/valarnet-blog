@@ -17,24 +17,24 @@ It doesn't make sense to troubleshoot the data plane before making sure the cont
 Here is a very high-level outline of a logical structure to follow:
 
 ### Control Plane Troubelshooting
-    > Verify underlay routing in site-1, site-2, and between the Border Gateways (BGWs) and that all the required loopbacks are learned properly. Verify if there are any route policy filters that interfere with learning of required loopbacks.
-    > Verify overlay peering between the BGWs, Spines, and Leafs.
-    > Verify if there are any route policy filters that interfere with learning of required loopbacks.
-    > Verify mutlicast routing if used for site-internal purposes. 
-    > Verify ingress-replication NVE learning occurs properly between the BGWs.
-    > Track the hosts and prefixes for proper control plane learning by starting from local leaf to local BGW, then across to remote BGWs, and remote leafs. Repeat this process in the other direction.
+> - Verify underlay routing in site-1, site-2, and between the Border Gateways (BGWs) and that all the required loopbacks are learned properly. Verify if there are any route policy filters that interfere with learning of required loopbacks.
+> - Verify overlay peering between the BGWs, Spines, and Leafs.
+> - Verify if there are any route policy filters that interfere with learning of required loopbacks.
+> - Verify mutlicast routing if used for site-internal purposes. 
+> - Verify ingress-replication NVE learning occurs properly between the BGWs.
+> - Track the hosts and prefixes for proper control plane learning by starting from local leaf to local BGW, then across to remote BGWs, and remote leafs. Repeat this process in the other direction.
 
 ### Data Plane Troubelshooting
-    > Verify MTU is set properly across the board.
-    > Determine if L2VNI or L3VNI focus matches the symptom.
-    > Determine if known unicast, BUM (Broadcast, Unknown Unicast, Multicast) traffic, or both is the failing condition. Track the VTEP to VTEP tunnel formations and verify if traffic path is fully built.
-    > Determine if vPCs are configured between switches and if there is a possibility of orphan ports in a misconfigured EVPN setup.
+> - Verify MTU is set properly across the board.
+> - Determine if L2VNI or L3VNI focus matches the symptom.
+> - Determine if known unicast, BUM (Broadcast, Unknown Unicast, Multicast) traffic, or both is the failing condition. Track the VTEP to VTEP tunnel formations and verify if traffic path is fully built.
+> - Determine if vPCs are configured between switches and if there is a possibility of orphan ports in a misconfigured EVPN setup.
 
 There's a lot more to consider in this space. It needs its own focused multi-part series or one organized guide.
 
 ### Route-filtering options in EVPN
 
-This section below is a summary of EVPN filtering options on [Cisco](https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/102x/configuration/vxlan/cisco-nexus-9000-series-nx-os-vxlan-configuration-guide-release-102x/m_configuring_bgp_evpn_filtering.html).
+This section below is a direct summary of EVPN filtering options on [Cisco](https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/102x/configuration/vxlan/cisco-nexus-9000-series-nx-os-vxlan-configuration-guide-release-102x/m_configuring_bgp_evpn_filtering.html).
 
 ##### Matching based on the EVPN route type.
 	
