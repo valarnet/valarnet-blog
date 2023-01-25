@@ -7,7 +7,7 @@ tags:
   - "bgp"
 ---
 
-This is a simple post that describes a topology of two directly routers R1 and R2. R1 runs in BGP ASN 100. R2 runs in BGP ASN 200. R1 and R2 are operating with IOS 15.7 firmware.
+This is a simple post that describes a topology of two directly connected routers R1 and R2. R1 runs in BGP ASN 100. R2 runs in BGP ASN 200. R1 and R2 are operating with IOS 15.7 firmware.
 
 ![](/static/img/ipv6-nlri-over-ipv4-bgp.png)
 
