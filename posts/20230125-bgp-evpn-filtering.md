@@ -23,7 +23,7 @@ Here is a very high-level outline of a logical structure that I found useful to 
 > - Verify overlay peering between the BGWs, Spines, and Leafs.
 > - Verify multicast routing if used for site-internal purposes. 
 > - Verify ingress-replication NVE learning occurs properly between the BGWs.
-> - Track the hosts and prefixes for proper control plane learning by starting from local leaf to local BGW, then across to remote BGWs, and remote leafs. Repeat this process in the other direction.
+> - Track the hosts and prefixes for proper control plane learning by starting from local leaf, local spine,  local BGW, then across to remote BGWs, remote spines, and remote leafs. Repeat this process in the other direction.
 
 ### Data Plane Troubleshooting
 > - Verify MTU is set properly across the board.
@@ -31,7 +31,7 @@ Here is a very high-level outline of a logical structure that I found useful to 
 > - Determine if known unicast, BUM (Broadcast, Unknown Unicast, Multicast) traffic, or both is the failing condition. Track the VTEP to VTEP tunnel formations and verify if traffic path is fully built.
 > - Determine if vPCs are configured between switches and if there is a possibility of orphan ports in a misconfigured EVPN setup.
 
-There's a lot more to consider in this space. It needs its own focused multi-part series or one organized guide.
+There's a lot more to consider and deep dive into in this space. What is the correct baseline behavior will also be highly dependent on the specific design scenario implemented. It is an undertaking that is going to need its own focused multi-part series or the development of one organized guide.
 
 ### Route-filtering options in EVPN
 
