@@ -10,7 +10,7 @@ tags:
 
 A recent BGP EVPN Multi-Site troubleshooting effort had me thinking about what the optimal approach to EVPN troubleshooting would be. 
 
-BGP EVPN Multi-Site is built out of lots of components and anything can fail anywhere - bugs, misconfigurations, undocumented quirks, you name it... Once it's figured out, it's painfully obvious but not so much when smack in the middle of the troubleshooting.
+BGP EVPN Multi-Site is built out of lots of components and anything can fail anywhere - bugs, misconfigurations, undocumented quirks, you name it... Once it's figured out, it's often painfully obvious but not so much when smack in the middle of the troubleshooting.
 
 This will evolve over time and perhaps I may end up writing an extended troubleshooting guide to supplement what is already out there. 
 
