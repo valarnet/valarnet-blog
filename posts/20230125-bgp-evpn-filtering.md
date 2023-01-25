@@ -8,13 +8,15 @@ tags:
   - "evpn"
 ---
 
-A recent BGP EVPN Multi-Site troubleshooting effort had me thinking about what the optimal approach to EVPN troubleshooting would be. BGP EVPN Multi-Site is built out of lots of components and anything can fail anywhere. Once it's figured out, it's painfully obvious but not so much when in the middle of the troubleshooting.
+A recent BGP EVPN Multi-Site troubleshooting effort had me thinking about what the optimal approach to EVPN troubleshooting would be. 
 
-This will eveolve over time and perhaps I may end up writing an extended troubleshooting guide to supplement what is already out there. 
+BGP EVPN Multi-Site is built out of lots of components and anything can fail anywhere - bugs, misconfigurations, undocumented quirks, you name it... Once it's figured out, it's painfully obvious but not so much when smack in the middle of the troubleshooting.
+
+This will evolve over time and perhaps I may end up writing an extended troubleshooting guide to supplement what is already out there. 
 
 It doesn't make sense to troubleshoot the data plane before making sure the control planes (both in the underlay and the overlay are working appropriately.)
 
-Here is a very high-level outline of a logical structure to follow:
+Here is a very high-level outline of a logical structure that I found useful to follow:
 
 ### Control Plane Troubelshooting
 > - Verify underlay routing in site-1, site-2, and between the Border Gateways (BGWs) and that all the required loopbacks are learned properly. Verify if there are any route policy filters that interfere with learning of required loopbacks.
