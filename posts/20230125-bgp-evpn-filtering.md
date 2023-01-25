@@ -19,7 +19,7 @@ It doesn't make sense to troubleshoot the data plane before making sure the cont
 Here is a very high-level outline of a logical structure that I found useful to follow:
 
 ### Control Plane Troubleshooting
-> - Verify underlay routing in site-1, site-2, and between the Border Gateways (BGWs) and that all the required loopbacks are learned properly. Verify if there are any route policy filters that interfere with learning of required loopbacks.
+> - Verify underlay routing in site-1, site-2, and between the Border Gateways (BGWs) and that all the required loopbacks are learned properly. Verify if there are any route policy filters that interfere with control plane learning.
 > - Verify overlay peering between the BGWs, Spines, and Leafs.
 > - Verify mutlicast routing if used for site-internal purposes. 
 > - Verify ingress-replication NVE learning occurs properly between the BGWs.
