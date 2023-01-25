@@ -14,7 +14,7 @@ BGP EVPN Multi-Site is built out of lots of components and anything can fail any
 
 This will evolve over time and perhaps I may end up writing an extended troubleshooting guide to supplement what is already out there. 
 
-There's a lot more to consider and deep dive into in this space. What is the correct baseline behavior will also be highly dependent on the specific design scenario implemented. It is an undertaking that is going to need its own focused multi-part series or the development of one organized guide.
+There's a lot more to consider and deep dive into in this space. What the correct baseline behavior is will also be highly dependent on the specific design scenario implemented - Anycast BGWs, vPC BGWs, underlay routing protocols, overlay routing protocols, etc. It is an undertaking that is going to need its own focused multi-part series or the production of one organized guide to structure it the way I'm imagining it now.
 
 It doesn't make sense to troubleshoot the data plane before making sure the control planes (both in the underlay and the overlay are working appropriately.)
 
