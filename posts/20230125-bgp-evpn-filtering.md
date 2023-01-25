@@ -16,7 +16,7 @@ This will evolve over time and perhaps I may end up writing an extended troubles
 
 There's a lot more to consider and deep dive into in this space. What the correct baseline behavior is will also be highly dependent on the specific design scenario implemented - Anycast BGWs, vPC BGWs, underlay routing protocols, overlay routing protocols, etc. It is an undertaking that is going to need its own focused multi-part series or the production of one organized guide to structure it the way I'm imagining it now.
 
-It doesn't make sense to troubleshoot the data plane before making sure the control planes (both in the underlay and the overlay are working appropriately.)
+It doesn't make sense to troubleshoot the data plane before making sure the control planes (both in the underlay and the overlay) are working appropriately.
 
 Here is a very high-level outline of a logical structure that I found useful to follow:
 
