@@ -1,6 +1,6 @@
 module.exports = {
   meta: {
-    title: "Ashenafi's Blog",
+    title: "One Node in a Network",
     description: "Computer networks and security.",
     lang: "en",
     siteUrl: "https://valarnet.com/",
