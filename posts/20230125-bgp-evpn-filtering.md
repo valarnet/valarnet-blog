@@ -14,6 +14,8 @@ BGP EVPN Multi-Site is built out of lots of components and anything can fail any
 
 This will evolve over time and perhaps I may end up writing an extended troubleshooting guide to supplement what is already out there. 
 
+There's a lot more to consider and deep dive into in this space. What is the correct baseline behavior will also be highly dependent on the specific design scenario implemented. It is an undertaking that is going to need its own focused multi-part series or the development of one organized guide.
+
 It doesn't make sense to troubleshoot the data plane before making sure the control planes (both in the underlay and the overlay are working appropriately.)
 
 Here is a very high-level outline of a logical structure that I found useful to follow:
@@ -30,8 +32,6 @@ Here is a very high-level outline of a logical structure that I found useful to 
 > - Determine if L2VNI or L3VNI focus matches the symptom.
 > - Determine if known unicast, BUM (Broadcast, Unknown Unicast, Multicast) traffic, or both is the failing condition. Track the VTEP to VTEP tunnel formations and verify if traffic path is fully built.
 > - Determine if vPCs are configured between switches and if there is a possibility of orphan ports in a misconfigured EVPN setup.
-
-There's a lot more to consider and deep dive into in this space. What is the correct baseline behavior will also be highly dependent on the specific design scenario implemented. It is an undertaking that is going to need its own focused multi-part series or the development of one organized guide.
 
 ### Route-filtering options in EVPN
 
