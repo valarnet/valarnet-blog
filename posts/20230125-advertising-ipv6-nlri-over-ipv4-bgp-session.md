@@ -171,7 +171,7 @@ To resolve this issue we will need to setup a route map that sets the IPv6 next 
 
 If the IPv6 next hop modifying route map is applied outbound on the BGP neighborship, the advertising router would tell the receiving router to use the IPv6 address on Gi0/0 of the advertising router. Simply put, R1 would use 2001:100::1 to set the next hop. R2 would use 2001:100::2 to set the next hop.
 
-If the route map is applied inbound, R1 will set the next hop to be R2's address 2001:100::2. R2 will set the next hop to be R1's address 2001:100::1.
+Conversely, if the route map is applied inbound, R1 will set the next hop to be R2's address 2001:100::2. R2 will set the next hop to be R1's address 2001:100::1.
 
 For this particular post, we'll just use the inbound option. We now create the route maps and apply the BGP policy on both routers.
 
