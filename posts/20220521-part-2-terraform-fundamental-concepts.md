@@ -48,7 +48,7 @@ In later parts of this series, we will see how to modify backend location and en
 
 Pictorially, the terraform lifecycle looks as shown here.
 
-![](/static/img/image-1.png)
+![](/static/img/terraform-lifecycle.png)
 
 **What happens during each stage of the lifecycle?**
 
@@ -89,7 +89,7 @@ If you are like [the joker](https://www.youtube.com/watch?v=wbbz9ccZks8), you'll
 
 The basic architecture diagram below encapsulates the components involved and the actions we outlined above in the different stages of the Terraform lifecycle.
 
-![](/static/img/image-2.png)
+![](/static/img/terraform-basic-arch.png)
 
 **Plugins:** These are the components that enable Terraform to interact with cloud providers, SaaS providers, and APIs.
 
