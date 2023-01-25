@@ -18,15 +18,14 @@ It doesn't make sense to troubleshoot the data plane before making sure the cont
 
 Here is a very high-level outline of a logical structure that I found useful to follow:
 
-### Control Plane Troubelshooting
+### Control Plane Troubleshooting
 > - Verify underlay routing in site-1, site-2, and between the Border Gateways (BGWs) and that all the required loopbacks are learned properly. Verify if there are any route policy filters that interfere with learning of required loopbacks.
 > - Verify overlay peering between the BGWs, Spines, and Leafs.
-> - Verify if there are any route policy filters that interfere with learning of required loopbacks.
 > - Verify mutlicast routing if used for site-internal purposes. 
 > - Verify ingress-replication NVE learning occurs properly between the BGWs.
 > - Track the hosts and prefixes for proper control plane learning by starting from local leaf to local BGW, then across to remote BGWs, and remote leafs. Repeat this process in the other direction.
 
-### Data Plane Troubelshooting
+### Data Plane Troubleshooting
 > - Verify MTU is set properly across the board.
 > - Determine if L2VNI or L3VNI focus matches the symptom.
 > - Determine if known unicast, BUM (Broadcast, Unknown Unicast, Multicast) traffic, or both is the failing condition. Track the VTEP to VTEP tunnel formations and verify if traffic path is fully built.
