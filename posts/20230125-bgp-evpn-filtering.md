@@ -60,7 +60,7 @@ end
 
 ```md
 conf t
-ip extcommunity-list standard MY-COMMUNITY deq 5 {deny|permit} rmac 0123.4567.89ab
+ip extcommunity-list standard MY-COMMUNITY seq 5 {deny|permit} rmac 0123.4567.89ab
 route-map ABC
   match extcommunity MY-COMMUNITY
 end
