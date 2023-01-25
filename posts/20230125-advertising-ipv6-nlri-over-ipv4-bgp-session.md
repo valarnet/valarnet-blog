@@ -174,6 +174,7 @@ If the IPv6 next hop modifying route map is applied outbound on the BGP neighbor
 If the route map is applied inbound, R1 will set the next hop to be R2's address 2001:100::2. R2 will set the next hop to be R1's address 2001:100::1.
 
 For this particular post, we'll just use the inbound option. We now create the route maps and apply the BGP policy on both routers.
+
 ```md
 R1
 route-map IPv6-SET-NH permit 10
@@ -183,6 +184,7 @@ router bgp 100
   neighbor 10.3.100.2 route-map IPv6-SET-NH in
  exit-address-family
 ```
+
 ```md
 R2
 route-map IPv6-SET-NH permit 10
