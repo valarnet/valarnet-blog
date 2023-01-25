@@ -13,8 +13,8 @@ This is a simple post that describes a topology of two directly routers R1 and R
 
 The objective is to advertise the IPv6 address on Loopback0 interface of R1 (2001:1::1/128) across an IPv4 BGP session to R2. Similarly, the IPv6 address of Loopback0 on R2 (2001:2::2/128) needs to be advertised to R1. As a verification step, IPv6 pings sourced between the loopbacks should succeed.
 
-First, configure the interface settings on both routers. The cross-link between R1 and R2 requires both IPv4 and IPv6 addresses even though we will only form BGP neighborship over the IPv4 address family. Since we're not using any form of tunneling in this scenario,  IPv6 addresses are needed on the cross-link so we can use them as next-hops to send IPv6 traffic across. The IPv4 addresses on the loopbacks are only for use as BGP router IDs.
-```
+First, configure the interface settings on both routers. The cross-link between R1 and R2 requires both IPv4 and IPv6 addresses even though we will form BGP neighborship only over the IPv4 address family. Since we're not using any form of tunneling in this scenario,  IPv6 addresses are needed on the cross-link so we can use them as next-hops to send IPv6 traffic across. The IPv4 addresses on the loopbacks are only for use as BGP router IDs.
+```md
 R1
 interface GigabitEthernet0/0
  ip address 10.3.100.1 255.255.255.0
