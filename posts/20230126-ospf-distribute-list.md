@@ -37,7 +37,7 @@ Neighbor ID     Pri   State           Dead Time   Address         Interface
 3.3.3.3           1   FULL/BDR        00:00:34    10.1.23.3       GigabitEthernet0/0
 ```
 
-By default, OSPF uses ECMP: If two routes with the same SPF cost are available, noth are installed and earry traffic load equally. 
+By default, OSPF uses ECMP. If two routes with the same SPF cost are available, both are installed and carry traffic load equally. 
 
 With this basic setup, traffic from R4's loopback to R3's loopback will follow path both via R1 10.1.14.1 next hop and R2 10.1.24.2 next hop.
 
@@ -113,7 +113,7 @@ Codes: * - Best, > - Installed in global RIB
       via 10.1.24.2, GigabitEthernet0/1
 ```
 
-Since all four routers must have the same view of the LSDB in area 0, there is no option to filter the advertisement of LSAs. Also, there are no ABRs or ASBRs in this topology. All routers are in the same area and running the same OSPF routing protocol.
+Since all four routers must have the same view of the LSDB in area 0, there is no option to filter the advertisement of LSAs. Also, there are no ABRs or ASBRs in this topology, all routers are in the same area and running the same OSPF routing protocol.
 
 A detailed look of the router LSA for 3.3.3.3 on R2 shows
 
