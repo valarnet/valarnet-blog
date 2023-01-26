@@ -20,7 +20,7 @@ Topology:
 
 ![](/static/img/triangle-of-switches.png)
 
-All spanning-tree configuration on the switches is left on default. SW1 is selected as the root for VLAN 1 due to it having the lowest bridge priority. (i.e., 5000.001f.0000 vs the other two switches SW2 and SW3)
+All spanning-tree configuration on the switches is left on default. SW1 is selected as the root for VLAN 1 due to it having the lowest bridge ID. (i.e., 5000.001f.0000 vs the other two switches SW2 and SW3)
 ```md
 SW1#sh spanning-tree vlan 1
 
