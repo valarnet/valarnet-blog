@@ -113,7 +113,7 @@ drwxr-xr-x  3 root    root            4096 Jan 27 16:55 staging
 -rw-------  1 root    root          534396 Jan 27 16:04 tmp.laMpYnXaCg
 ```
 
-A properly running vManage server would return an NMS status output similar to the following, The NMS processes will run if they're enabled. It'll also display the Process ID and for how long the process has been running.
+A properly running vManage server would return an NMS status output similar to the following, The NMS processes will run if they're enabled. It'll also display the Process ID and for how long it has been running.
 
 ```md
 vManage# request nms all status
@@ -145,7 +145,7 @@ NMS SDAVC proxy
 	Enabled: true
 	Status:  running PID:536 for 160294s
 ```
-The state pf these processes can also be displayed from inside the vManage GUI. This is only helpful when the application server process is working ok and you are able to log in to the GUI.
+The state of these processes can also be displayed from inside the vManage GUI - **Administration** > **Cluster Management** > **Service Configuration**, click on the vManage device and look under the **vManage Details** tab. This is only helpful when the application server process is working ok and you are able to log into the GUI.
 
 ![](/static/img/vmanage-gui-process-status.png)
 
