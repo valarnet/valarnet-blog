@@ -145,6 +145,9 @@ NMS SDAVC proxy
 	Enabled: true
 	Status:  running PID:536 for 160294s
 ```
+The state pf these processes can also be displayed from inside the vManage GUI. This is only helpful when the application server process is working ok and you are able to log in to the GUI.
+
+![](/static/img/vmanage-gui-process-status.png)
 
 As far as I have looked, there doesn't appear to be a way to take or schedule database backups from the vManage GUI. Of course one can use the SSH Terminal Tool CLI from inside the vManage GUI, but that still is really not a GUI function.
 
