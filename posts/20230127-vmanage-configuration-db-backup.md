@@ -52,7 +52,7 @@ In this situation, an error message that may be observed when diagnosing the con
 vManage# request nms configuration-db diagnostics
 ```
 
-Once it goes in to the localhost connection refused state, I have not been able to fix the vManage or recover it as it is. The only recourse I had to take was to rebuild a new vManage and start the controller integration and vEdge onboarding all over again. This was quite the waste of time I didn't need.
+Once it goes in to the localhost connection refused state, I have not been able to fix the vManage or recover it as it is. Cisco TAC may be able to because they have the root password. The only recourse I had to take was to rebuild a new vManage and start the controller integration and vEdge onboarding all over again. This was quite the waste of time I didn't need.
 
 ### Backup vManage Configuration DB from CLI
 
