@@ -1,5 +1,5 @@
 ---
-title: "vManage GUI Not Loading - Backup Configuation DB"
+title: "vManage GUI Not Loading - Backup Configuration DB"
 date: "2023-01-27"
 categories: 
   - "valarnet"
@@ -7,7 +7,7 @@ tags:
   - "sdwan"
 ---
 
-When my home SD-WAN lab running in EVE-NG corrupted due to power failure, it had me lose hours of setup, Ever since, I've been regularly backing up the configuration DB to be ready when a restore is needed. Testing the restoration also has helped out in recovering state.
+When my home SD-WAN lab running in EVE-NG corrupted due to power failure, it had me lose hours of setup. Ever since, I've been regularly backing up the configuration DB to be ready when a restore is needed. Testing the restoration also has helped out in recovering state.
 
 One of the things that can happen due to a corrupted vManage configuration DB is the VManage GUI may end up being unable to load. There seems to be a dependency where if the configuration-db NMS process is unable to run then the application server can't initialize either. The application server process is what makes the vManage GUI accessible. 
 
