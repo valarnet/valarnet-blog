@@ -87,9 +87,9 @@ chown: cannot access '/opt/data/backup/home/admin.tar.gz': No such file or direc
 chmod: cannot access '/opt/data/backup/home/admin.tar.gz': No such file or directory
 Successfully saved database to /opt/data/backup/home/admin.tar.gz
 ```
-It'll do its thing but it will save the file to /opt/data/backup/home/admin. Weird. Right? It appends the /opt/data/backup/ to whatever is specfied after path.  It does this all the while complaining that the prvided directory or file doesn't exist.
+It'll do its thing but it will save the file to /opt/data/backup/home/admin. Weird. Right? It appends the /opt/data/backup/ to whatever is specfied after path.  It does this all the while complaining that the provided directory or file doesn't exist.
 
-To my mind. what makes sense is the "path" keyword in the command isn't a fully appropriate label. What the command seems to be expecting is to be provided a **file name or a path to a file including the file name.** 
+To my mind, what makes sense is the "path" keyword in the command isn't a fully appropriate label. What the command seems to be expecting is to be provided a **file name or a path to a file including the file name.** 
 
 ```md
 vManage# request nms configuration-db backup path RandomFileName
