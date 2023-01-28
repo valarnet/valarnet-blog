@@ -9,7 +9,7 @@ tags:
 
 When my home SD-WAN lab running in EVE-NG corrupted due to power failure, it had me lose hours of setup. Ever since, I've been regularly backing up the configuration DB to be ready when a restore is needed. Testing the restoration also has helped out in recovering state.
 
-One of the things that can happen due to a corrupted vManage configuration DB is the VManage GUI may end up being unable to load. There seems to be a dependency where if the configuration-db NMS process is unable to run then the application server can't initialize either. The application server process is what makes the vManage GUI accessible. 
+One of the things that can happen due to a corrupted vManage configuration DB is the vManage GUI may end up being unable to load. There seems to be a dependency where if the configuration-db NMS process is unable to run then the application server can't initialize either. The application server process is what makes the vManage GUI accessible. 
 
 Typically the application server can take 5 to 10 minutes to fully start. Patience is warranted here but if, for some reason, you are unable to load the vManage GUI in EVE-NG, the state of the NMS processes would be one place to start looking.
 
@@ -52,7 +52,7 @@ In this situation, an error message that may be observed when diagnosing the con
 vManage# request nms configuration-db diagnostics
 ```
 
-Once it goes in to the localhost connection refused state, I have not been able to fix the vManage or recover it as it is. Cisco TAC may be able to because they have the root password. The only recourse I had to take was to rebuild a new vManage and start the controller integration and vEdge onboarding all over again. This was quite the waste of time I didn't need.
+Once it goes in to the localhost connection refused state, I have not been able to fix the vManage or recover it as it is. Cisco TAC may be able to because they have the root password. The only course of action I was left with was to rebuild a new vManage then start the controller integration and vEdge onboarding all over again. This was quite the waste of time I didn't need.
 
 ### Backup vManage Configuration DB from CLI
 
@@ -113,7 +113,7 @@ drwxr-xr-x  3 root    root            4096 Jan 27 16:55 staging
 -rw-------  1 root    root          534396 Jan 27 16:04 tmp.laMpYnXaCg
 ```
 
-A properly running vManage server would return an NMS status output similar to the following, The NMS processes will run if they're enabled. It'll also display the Process ID and for how long it has been running.
+A properly running vManage server would return an NMS status output similar to the following. The NMS processes will run if they're enabled. It'll also display the Process ID and for how long it has been running.
 
 ```md
 vManage# request nms all status
