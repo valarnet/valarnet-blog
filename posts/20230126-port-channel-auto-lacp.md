@@ -237,7 +237,7 @@ SW1#
 
 There's still no indication in the outputs that these bundles were formed using port-channel auto. The "show etherch summa" flags show that **A** stands for ***formed by Auto LAG.*** But we're not seeing that flag in the outputs either.
 
-Let's give that output a try and see if there's any indicator
+Let's give the detailed output a try and see if there's any indicator.
 
 ```md
 SW1#show etherch 1 detail
