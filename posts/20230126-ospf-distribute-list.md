@@ -232,7 +232,6 @@ Link ID         ADV Router      Age         Seq#       Checksum
 ```
 
 Let's now check if R4's view of the routing table has changed in any way. It hasn't. 
-R4 (erroneously) still operates as if it has valid redundant paths to 3.3.3.3/32 via both R1 and R2.
 
 ```md
 R4#sh ip route ospf
@@ -250,12 +249,12 @@ O        10.1.13.0/24 [110/2] via 10.1.14.1, 00:38:45, GigabitEthernet0/0
 O        10.1.23.0/24 [110/2] via 10.1.24.2, 00:38:45, GigabitEthernet0/1
 
 ```
-
+R4 (erroneously) still operates as if it has valid redundant paths to 3.3.3.3/32 via both R1 and R2.
 Each router in the OSPF area performs its own SPF calculation based on the its view of the LSDB. For path calculation to destinations **in the same area**, *because somebody else told me so* doesn't work.
 
 > **Note:** The phrase "in the same area" is key above. If the destinations were in another OSPF area under the same process or another routing domain altogether (i.e., external or a different OSPF process), ABRs and ASBRs would have the power to influence how other routers make their decisions. These include the means of Type-3 LSA summarization, Type-3 LSA Fileting by setting the LSA age to max-age, or NSSA Type-7 external LSA filtering by setting the P-bit (Propagate bit) to zero. This, though, is not the topic of this post.
 
-However, since a distribute list has been applied on R2, half of the traffic R4 sends to R3's loopback will end up being blackholed at R2.
+Since a distribute list has been applied on R2, half of the traffic R4 sends to R3's loopback will end up being blackholed at R2.
 ```md
 R4#ping 3.3.3.3 so lo0 repeat 10
 Type escape sequence to abort.
