@@ -11,7 +11,7 @@ tags:
 ### BGP Default Origination
 1. Using **"network 0.0.0.0"** statement. A default route must be present in the routing table. BGP injects default route into the BGP RIB and advertises it.
 2. Using **redistribution.** A default route learned via an IGP or static must be present in the routing table. BGP injects default route into the BGP RIB and advertises it.
-3. Using **"default-information originate."** When used directly under the BGP process, BGP artificially generates a default route and injects it into the local BGP RIB and advertises it to all peers. There needs to be a default route that is redistributed into BGP or a network statement,
+3. Using **"default-information originate."** When used directly under the BGP process, BGP artificially generates a default route and injects it into the local BGP RIB and advertises it to all peers. There needs to be a default route that is redistributed into BGP.
 4. Using **"neighbor x.x.x.x default-originiate."** When used directly on a neighbor statement, BGP unconditionally generates a default route and advertises it ONLY to the specified neighbor. The default route will not be installed in the BGP RIB. Therefore, it will not be advertised to other peers.
 5. **Can aggregation be used on its own as a default route advertisement mechanism?** If attempting to advertise a default route with an *aggregate-address 0.0.0.0 0.0.0.0 summary-only* command, you'll be met with a notification message with an attitude. **% Aggregating to create default makes no sense, use a network statement instead.**
 
