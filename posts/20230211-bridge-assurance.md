@@ -14,7 +14,8 @@ Bridge Assurance works with RSTP and MST since it relies on the ability to send 
 When Bridge Assuarnce is enabled, BPDUs are sent on all operational ports that have STP port type "network", including alternate and backup ports. If BPDUs are not received on a port within the hello time period, the port is moved into a blocked state (port inconsistent state.) The port stops the forwarding of frames and prevents loops. 
 
 ```md
-%SPANTREE-2-BRIDGE_ASSURANCE_BLOCK: Bridge Assurance blocking port GigabitEthernet0/1 on VLAN0100.
+%SPANTREE-2-BRIDGE_ASSURANCE_BLOCK: 
+Bridge Assurance blocking port GigabitEthernet0/1 on VLAN0100.
 ```
 
 If a blocked port starts receiving BPDUs again, the port is removed from bridge assurance blocking state, and goes through normal RSTP transition process.
