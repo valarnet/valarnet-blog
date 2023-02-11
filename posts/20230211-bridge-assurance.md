@@ -17,5 +17,7 @@ On vPC peer-links, Bridge Assurance is enabled automatically. Bridge Assurance i
 
 ##### Further Reading
 [Understanding Rapid Spanning Tree Protocol (802.1w)](https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/24062-146.html#anc6)
+
 [Configuring Optional Spanning Tree Features](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/16-12/configuration_guide/lyr2/b_1612_lyr2_9500_cg/configuring_optional_spanning_tree_features.html#Cisco_Concept.dita_cfe5e337-9809-43c3-901e-32b7226805f4)
+
 [Design and Configuration Guide: Best Practices for vPC on Cisco Nexus 7000 Switches](https://www.cisco.com/c/dam/en/us/td/docs/switches/datacenter/sw/design/vpc_design/vpc_best_practices_design_guide.pdf)
