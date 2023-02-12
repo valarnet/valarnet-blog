@@ -7,7 +7,7 @@ tags:
   - "switching"
 ---
 
-A major difference between traditional STP (802.1d) versus RSTP (802.1w) or MST (802.1s) which utilizes RSTP's mechanisms is how BPDUs are sent. In traditional STP (802.1d), BPDUs received from the root bridge are relayed via downstream connected ports. However, in RSTP (802.1w) based systems, BPDUs are sent instead of just being relayed. This means a bridge sends BPDUs every hello interval (2 seconds, by default) regardless of it receiving BPDUs from the root bridge or not. The BPDUs in RSTP are used as keepalives. By default, if three consecutive BPDUs are missed, it is used as an indication of connectivity issues to a bridge's direct neighbor.
+A major difference between traditional STP (802.1d) versus RSTP (802.1w) - or MST (802.1s) which utilizes RSTP's mechanisms - is how BPDUs are sent. In traditional STP (802.1d), BPDUs received from the root bridge are relayed via downstream connected ports. However, in RSTP (802.1w) based systems, BPDUs are sent instead of just being relayed. This means a bridge sends BPDUs every hello interval (2 seconds, by default) regardless of it receiving BPDUs from the root bridge or not. The BPDUs in RSTP are used as keepalives. By default, if three consecutive BPDUs are missed, it is used as an indication of connectivity issues to a bridge's direct neighbor.
 
 Bridge Assurance works with RSTP and MST since it relies on the ability to send BPDUs which the traditional STP doesn't have capability for. It is a feature that monitors the receipt of BPDUs on point-to-point links on all network ports. Bridge Assurance helps prevent loops caused by unidirectional links or a malfunction in a neighboring switch. 
 
