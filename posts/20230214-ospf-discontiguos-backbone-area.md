@@ -509,3 +509,6 @@ L        192.168.24.4/32 is directly connected, GigabitEthernet0/0
 This demonstrates that if the backbone area in OSPF is discontiguous, we run into all sorts of routing problems. Routers will not be able to build a proper view of the topology. 
 
 The case we covered in this post only considered discontiguous backbone area. But the problem of incomplete topology views in OSPF is also experienced if non-backbone areas are built in a discontiguous manner. There are duct-tape type fixes to these problems but good design practice is critical to avoid such situations. ABR and ASBR placement considerations play a great deal into optimal OSPF routing implementations.
+
+##### Further Reading:
+  - [Configure OSPF with Multi-Area Adjacency](https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/118879-configure-ospf-00.html)
