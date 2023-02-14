@@ -14,7 +14,7 @@ The purpose of MLD tracks similarly to the one IGMP accomplishes in IPv4 network
 IGMP has three versions serving in IPv4 networks. 
   - IGMPv1 is the original implementation where basic query and report mechanisms were laid out in. 
   - IGMPv2 improved on IGMPv1 by adding capability for hosts to explictly leave multicast groups rather than continuing to receive multicast traffic they have no need for and letting it expire. IGMPv2 is considered backwards compatible (with caveats) with IGMPv1-only capable hosts and devices.
-  - IGMPv3 further enhanced on the capabilities of IGMPv1 and IGMPv2 by allowing hosts devices to specifically request to include or exclude certain multicast groups that they wish to join. IGMPv3 is a pre-requisite to deploy Source-Specific Multicast (SSM).
+  - IGMPv3 further enhanced on the capabilities of IGMPv1 and IGMPv2 by allowing hosts to specifically request to include or exclude certain multicast groups that they wish to join. IGMPv3 is a pre-requisite to deploy Source-Specific Multicast (SSM).
 
 In IPv6 networks, MLDv1 is a functional equivalent of IGMPv2. Whereas, MLDv2 is a functional equivalent of IGMPv3. MLDv2 makes deployment of SSM in IPv6 networks possible.
 
@@ -22,7 +22,7 @@ MLD is a sub-protocol of ICMPv6. MLD messages have the following format:
 
 ![](/static/img/mld-message-format.png)
 
-There are three types of MLD messages designated by the "Type" field.
+There are three types of MLD messages as designated by the "Type" field.
 
   **MLD Query:**  Type = decimal 130. There are twq subtypes of the MLD query. First one is called "General Query" and is used to learn which multicast addresses have listeners on an attached link. The second sybtype is called Multicast-Address-Specific query and, as the name implies, is used to learn if a particular multicast address has any listeners on an attached link. The MMulticast Address field differentiates between the two subtypes.
 > General Queries are sent to the link-scope all-nodes multicast address (FF02::1), with a Multicast Address field of 0, and a Maximum Response Delay of [Query Response Interval].
