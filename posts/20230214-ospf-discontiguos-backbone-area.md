@@ -315,12 +315,12 @@ L        192.168.24.2/32 is directly connected, GigabitEthernet0/1
 
 - **Option 1:** Add a link between R1 and R2 in Area 0 to make the backbone contiguous. This should be pretty straightforward. But in some cases there may be physical restrictions that prohibit us from doing so.
 - **Option 2:** Build a virtual link over Area 1 to make the backbone contiguous. If R1 was a stub or non-transit area, we would not be able to implement this option.
-- **Option 3**: Build a GRE tunnel between R1 and R2 with tunnel interfaces placed in Area 0. There's not only configuration overhead and risk of intermittency with tunnels, but data plane overhead when it comes to tunnels.
+- **Option 3**: Build a GRE tunnel between R1 and R2 with tunnel interfaces placed in Area 0. There's not only configuration overhead and risk of intermittency, but also data plane overhead when it comes to tunnels.
 - **Option 4**: Use multi-area adjacency on the link between R1 and R2. **OSPF Multi-area adjacency** is a feature that allows OSPF to run separate adjacencies in multiple areas over the same physical link. A key requirement to use the multi-area adjacency feature is the link has to be an **OSPF point-to-point** network type. 
 
 We'll try Option 4 and configure multi-area adjacency.
 
-Let's see verify details of the adjacency between R1 and R2 before we make the change.
+Let's see details of the adjacency between R1 and R2 before we make the change.
 ```md
 R1#show ip ospf nei 192.168.12.2
  Neighbor 192.168.12.2, interface address 192.168.12.2
@@ -374,7 +374,7 @@ MA0          1     0               Unnumbered Gi0/0   1     P2P   1/1
 Gi0/1        1     0               192.168.13.1/24    1     DR    1/1
 Gi0/0        1     1               192.168.12.1/24    1     P2P   1/1
 ```
-Now let's check the R1-R2 OSPF adjacency details again. We see two adjacencies between R1 and R2 over the same physical link. One adjaceny is in Area 0 over the OSPF_MA0 logical interface while another is formed in Area 1 over the Gi0/0 physical interface.
+Now let's check the R1-R2 OSPF adjacency details again. We see two adjacencies between R1 and R2. One adjaceny is in Area 0 over the OSPF_MA0 logical interface while another is formed in Area 1 over the Gi0/0 physical interface.
 ```md
 R1#show ip ospf nei
 
