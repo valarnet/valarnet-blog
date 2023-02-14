@@ -16,7 +16,7 @@ IGMP has three versions serving in IPv4 networks.
   - IGMPv2 improved on IGMPv1 by adding capability for hosts to explictly leave multicast groups rather than continuing to receive multicast traffic they have no need for and letting it expire. IGMPv2 is considered backwards compatible (with caveats) with IGMPv1-only capable hosts and devices.
   - IGMPv3 further enhanced on the capabilities of IGMPv1 and IGMPv2 by allowing hosts devices to specifically request to include or exclude certain multicast groups that they wish to join. IGMPv3 is a pre-requisite to deploy Source-Specific Multicast (SSM).
 
-MLDv1 is a functional equivalent of IGMPv2. Whereas, MLDv2 is a functional equivalent of IGMPv3. MLDv2 makes deployment of SSM in IPv6 networks possible.
+In IPv6 networks, MLDv1 is a functional equivalent of IGMPv2. Whereas, MLDv2 is a functional equivalent of IGMPv3. MLDv2 makes deployment of SSM in IPv6 networks possible.
 
 MLD is a sub-protocol of ICMPv6. MLD messages have the following format:
 
