@@ -88,7 +88,8 @@ Link ID         ADV Router      Age         Seq#       Checksum Tag
 4.4.4.4         192.168.24.4    959         0x80000001 0x0062A8 0
 ```
 
-Looking into the details of the external LSA shows that it is advertised by R4 (OSPF router ID 192.168.24.4)
+Looking into the details of the external LSA shows that it is advertised by R4 (OSPF router ID 192.168.24.4). It also shows that the forward address is set to 0.0.0.0 indicating that R3 needs to perform recursive lookup to the advertising router R4. But the 192.168.24.0/24 network is also unknown to R3's OSPF process as observed in the LSDB output above. This poses a problem and makes the 4.4.4.4/32 LSA unusable.
+
 ```md
 R3#sh ip ospf database external 4.4.4.4
 
@@ -111,7 +112,7 @@ R3#sh ip ospf database external 4.4.4.4
 	Forward Address: 0.0.0.0
 	External Route Tag: 0
 ```
-However, checking in R3's routing table shows that a 4.4.4.4/32 route is not installed in the RIB.
+Checking in R3's routing table shows that a 4.4.4.4/32 route is not installed in the RIB.
 ```md
 R3#sh ip route | b Gateway
 Gateway of last resort is not set
