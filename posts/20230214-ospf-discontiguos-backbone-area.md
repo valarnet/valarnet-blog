@@ -516,3 +516,4 @@ The case we covered in this post only considered discontiguous backbone area. Bu
 ##### Further Reading:
   - [Configure OSPF with Multi-Area Adjacency](https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/118879-configure-ospf-00.html)
   - [OSPF Version 2 - RFC 2328](https://www.rfc-editor.org/rfc/rfc2328)
+  - [Understanding OSPF Transit Capability](https://ine.com/blog/2009-09-14-understanding-ospf-transit-capability)
