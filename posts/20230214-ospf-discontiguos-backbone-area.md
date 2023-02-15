@@ -514,6 +514,6 @@ This demonstrates that if the backbone area in OSPF is discontiguous, we run int
 The case we covered in this post only considered discontiguous backbone area. But the problem of incomplete topology views in OSPF is also experienced if non-backbone areas are built in a discontiguous manner. There are duct-tape type fixes to these problems but good design practice is critical to avoid such situations. ABR and ASBR placement considerations play a great deal into optimal OSPF routing implementations.
 
 ##### Further Reading:
-  - [Configure OSPF with Multi-Area Adjacency](https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/118879-configure-ospf-00.html)
-  - [OSPF Version 2 - RFC 2328](https://www.rfc-editor.org/rfc/rfc2328)
-  - [Understanding OSPF Transit Capability](https://ine.com/blog/2009-09-14-understanding-ospf-transit-capability)
+- <a href="https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/118879-configure-ospf-00.html" target="_blank">Configure OSPF with Multi-Area Adjacency</a>
+- <a href="https://www.rfc-editor.org/rfc/rfc2328" target="_blank">OSPF Version 2 - RFC 2328</a>
+- <a href="https://ine.com/blog/2009-09-14-understanding-ospf-transit-capability" target="_blank">Understanding OSPF Transit Capability</a>
