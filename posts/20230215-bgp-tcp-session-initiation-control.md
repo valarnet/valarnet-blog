@@ -17,7 +17,7 @@ R1(config-router)#neighbor 192.168.12.1 transport ?
   path-mtu-discovery  Use transport path MTU discovery
 ```
 
-For a simple topology with two routers R1 & R2, R1 can be configured to be active and R2 passive.
+For a simple topology with two routers R1 & R2, "**transport connection-mode**" can be configured to make R1 active and R2 passive.
 
 ```md
 R1
