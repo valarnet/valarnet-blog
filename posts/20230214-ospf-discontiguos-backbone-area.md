@@ -9,7 +9,9 @@ tags:
 
 **How does OSPF deal with a discontiguous backbone area?**
 
-**TL;DR:** ABRs are responsible for generating Summary LSAs and in the process information is lost. One OSPF rule to know and skip reading this entire post is - **ABRs do not take into SPF calculation consideration Summary LSAs received over a non-backbone area.** In contrast, if an ABR receives Summary LSA from another ABR over the backbone area, it regenerates a new Summary LSA and lists itself as the advertising router with the additional cost metric.   
+**TL;DR:** ABRs are responsible for generating Summary LSAs and in the process information is lost. One OSPF rule to know and skip reading this entire post is - **ABRs do not take into SPF calculation consideration Summary LSAs received over a non-backbone area.** In contrast, if an ABR receives Summary LSA from another ABR over the backbone area, it regenerates a new Summary LSA and lists itself as the advertising router with the additional cost metric.
+
+Consider the following topology:
 
 ![](/static/img/ospf-discontiguous-area0.png)
 
