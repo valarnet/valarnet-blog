@@ -9,7 +9,7 @@ tags:
 
 **How does OSPF deal with a discontiguous backbone area?**
 
-**TL;DR:** One OSPF rule to know and skip reading this entire post is - **ABRs do not take into SPF calculation consideration LSAs received over a non-backbone area.**
+**TL;DR:** ABRs are responsible for generating Summary LSAs and in the process information is lost. One OSPF rule to know and skip reading this entire post is - **ABRs do not take into SPF calculation consideration Summary LSAs received over a non-backbone area.** n contrast, if an ABR receives Summary LSA from another ABR over the backbone area, it regenerates a new SUmmary LSA and lists itself as the advertising router with the additional cost metric.   
 
 ![](/static/img/ospf-discontiguous-area0.png)
 
@@ -145,7 +145,7 @@ Codes: * - Best, > - Installed in global RIB
       via 192.168.13.3, GigabitEthernet0/0
 ```
 
-**An important rule in OSPF is that ABRs do not take into SPF calculation consideration LSAs received over a non-backbone area.**
+**An important rule in OSPF is that ABRs do not take into SPF calculation consideration Summary LSAs received over a non-backbone area.**
 
 Therefore, both R4's Lo0 4.4.4.4/32, which was redistributed into OSPF, and the route for the link between R2 and R4 (192.168.24.0/24) are not available for R3 to use. In fact, an LSA for the latter (192.168.24.0/24) does not even appear in R3's view.
 
@@ -513,3 +513,4 @@ The case we covered in this post only considered discontiguous backbone area. Bu
 
 ##### Further Reading:
   - [Configure OSPF with Multi-Area Adjacency](https://www.cisco.com/c/en/us/support/docs/ip/open-shortest-path-first-ospf/118879-configure-ospf-00.html)
+  - [OSPF Version 2 - RFC 2328](https://www.rfc-editor.org/rfc/rfc2328)
