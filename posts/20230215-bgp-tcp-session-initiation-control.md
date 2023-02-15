@@ -46,7 +46,4 @@ TCB       Local Address               Foreign Address             (state)
 The "**transport multi-session**" option enables BGP capability to form multiple TCP sessions between neighbors where there is only one neighbor statement. It is relevant when Multi Topology Routing (MTR) is a required use-case.
 
 ##### Further Reading
-- [BGP Multisession](https://community.cisco.com/t5/service-providers-knowledge-base/bgp-multisession/ta-p/3128005)
-
-
-
+- <a href="https://community.cisco.com/t5/service-providers-knowledge-base/bgp-multisession/ta-p/3128005" target="_blank">BGP Multisession</a>
