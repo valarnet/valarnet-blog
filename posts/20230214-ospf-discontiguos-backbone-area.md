@@ -9,7 +9,7 @@ tags:
 
 **How does OSPF deal with a discontiguous backbone area?**
 
-Consider the following topology.
+**TL;DR:** One OSPF rule to know and skip reading this entire post is - **ABRs do not take into SPF calculation consideration LSAs received over a non-backbone area.**
 
 ![](/static/img/ospf-discontiguous-area0.png)
 
