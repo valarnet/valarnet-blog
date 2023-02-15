@@ -233,7 +233,7 @@ Link ID         ADV Router      Age         Seq#       Checksum Tag
 4.4.4.4         192.168.24.4    512         0x80000002 0x0060A9 0
 ```
 
-Our ABR R1's routing table shows that it is not installing neither the 192.168.24.0/24 nor the 4.4.4.4/32 routes since it learned about them over the non-backbone area 1.
+Our ABR R1's routing table shows that it does not install the 192.168.24.0/24 and 4.4.4.4/32 routes since it learned about them over the non-backbone area 1.
 ```md
 R1#sh ip route | b Gateway
 Gateway of last resort is not set
