@@ -35,7 +35,7 @@ Here is a very high-level outline of a logical structure that I found useful to 
 
 ### Route-filtering options in EVPN
 
-This section below is a direct summary of EVPN filtering options on [Cisco](https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/102x/configuration/vxlan/cisco-nexus-9000-series-nx-os-vxlan-configuration-guide-release-102x/m_configuring_bgp_evpn_filtering.html).
+This section below is a direct summary of EVPN filtering options on <a href="https://www.cisco.com/c/en/us/td/docs/dcn/nx-os/nexus9000/102x/configuration/vxlan/cisco-nexus-9000-series-nx-os-vxlan-configuration-guide-release-102x/m_configuring_bgp_evpn_filtering.html" target="_blank">Cisco</a>.
 
 ##### Matching based on the EVPN route type.
 	
