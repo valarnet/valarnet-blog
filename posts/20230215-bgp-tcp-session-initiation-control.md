@@ -11,7 +11,7 @@ It is possible to control which router initiates a BGP session request and which
 
 ```md
 R1(config)#router bgp 100
-R1(config-router)#neighbor 192.168.12.1 transport ?
+R1(config-router)#neighbor 192.168.12.2 transport ?
   connection-mode     Specify passive or active connection
   multi-session       Use Multi-session for transport
   path-mtu-discovery  Use transport path MTU discovery
@@ -22,16 +22,16 @@ For a simple topology with two routers R1 & R2, "**transport connection-mode**" 
 ```md
 R1
 router bgp 100
- neighbor 192.168.12.1 remote-as 100
- neighbor 192.168.12.1 transport connection-mode active
+ neighbor 192.168.12.2 remote-as 100
+ neighbor 192.168.12.2 transport connection-mode active
 ```
 
 R2 waits passively to hear from the peer.
 ```md
 R2
 router bgp 100
- neighbor 192.168.12.2 remote-as 100
- neighbor 192.168.12.2 transport connection-mode passive
+ neighbor 192.168.12.1 remote-as 100
+ neighbor 192.168.12.1 transport connection-mode passive
 ```
 
 R1 acts as the TCP client and  R2 as the server listening on TCP port 179. 
