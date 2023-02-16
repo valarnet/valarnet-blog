@@ -23,6 +23,6 @@ If a blocked port starts receiving BPDUs again, the port is removed from bridge 
 On vPC peer-links, Bridge Assurance is enabled automatically. Bridge Assurance is not supported on vPC member ports since these ports are always in forwarding state.
 
 ##### Further Reading
--   [Understanding Rapid Spanning Tree Protocol (802.1w)](https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/24062-146.html#anc6)
--   [Configuring Optional Spanning Tree Features](https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/16-12/configuration_guide/lyr2/b_1612_lyr2_9500_cg/configuring_optional_spanning_tree_features.html#Cisco_Concept.dita_cfe5e337-9809-43c3-901e-32b72268)
--   [Design and Configuration Guide: Best Practices for vPC on Cisco Nexus 7000 Switches](https://www.cisco.com/c/dam/en/us/td/docs/switches/datacenter/sw/design/vpc_design/vpc_best_practices_design_guide.pdf)
+- <a href="https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol/24062-146.html#anc6" target="_blank">Understanding Rapid Spanning Tree Protocol (802.1w)</a>
+- <a href="https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9500/software/release/16-12/configuration_guide/lyr2/b_1612_lyr2_9500_cg/configuring_optional_spanning_tree_features.html#Cisco_Concept.dita_cfe5e337-9809-43c3-901e-32b72268" target="_blank">Configuring Optional Spanning Tree Features</a>
+- <a href="https://www.cisco.com/c/dam/en/us/td/docs/switches/datacenter/sw/design/vpc_design/vpc_best_practices_design_guide.pdf" target="_blank">Design and Configuration Guide: Best Practices for vPC on Cisco Nexus 7000 Switches</a>
