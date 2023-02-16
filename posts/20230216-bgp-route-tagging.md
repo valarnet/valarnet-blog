@@ -9,7 +9,7 @@ tags:
 
 **TL;DR:** BGP in Cisco IOS (15.7 in this test) automatically tags routes with the most recent AS the prefix passed through.
 
-While experimenting to apply route tags on BGP peering using inbound and outbound route-map methods, I picked up on an interesting tagging behavior in BGP.
+While experimenting to apply route tags on BGP peering using inbound and outbound route-map methods, I picked up on an interesting tagging behavior in BGP. May have been obvious all along but randomly stumbled on it.
 
 A simple topology of R1 in AS100 and R2 in AS200 is used.
 
