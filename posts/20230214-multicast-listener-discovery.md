@@ -7,7 +7,7 @@ tags:
   - "multicast"
 --- 
 
-Multicast Listener Discovery (MLD) is a component of the IPv6 "suite." MLDv1 is specified in [RFC 2710](https://www.rfc-editor.org/rfc/rfc2710) and MLDv2 is specified in [RFC 3810](https://www.rfc-editor.org/rfc/rfc3810)
+Multicast Listener Discovery (MLD) is a component of the IPv6 "suite." MLDv1 is specified in <a href="https://www.rfc-editor.org/rfc/rfc2710" target="_blank">RFC 2710</a> and MLDv2 is specified in <a href="https://www.rfc-editor.org/rfc/rfc3810" target="_blank">RFC 3810</a>
 
 The purpose of MLD tracks similarly to the one IGMP accomplishes in IPv4 networks. That is, it is used to manage membership of hosts and routers to multicast groups. 
 
