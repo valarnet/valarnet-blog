@@ -9,14 +9,12 @@ eleventyNavigation:
 ---
 
 
-My name is Ash. I am a Network Engineer with a decade plus experience designing, implementating, and administering network solutions. I hold multiple certifications from vendors such as Cisco, Fortinet, AWS, and  Google. [My LinkedIn Profile](https://www.linkedin.com/in/ashenafi-w-bekele-4938a424)
+My name is Ash. I am a Network Engineer experienced in designing, implementating, and administering network solutions. I hold multiple certifications from vendors such as Cisco, Fortinet, AWS, and  Google. - <a href="https://www.linkedin.com/in/ashenafi-w-bekele-4938a424" target="_blank">My LinkedIn Profile</a>
 
-The name of this blog is a combination of J.R.R. Tolkien's world (Valar) and another realm I enjoy: networking (net). 
+The name of this blog is a combination of Tolkien's world (Valar) and another realm I enjoy: networking (net). 
 
-Look around and if you feel like it, leave any kind of feedback.
-
-**Two quotes I like:**
-
-*"What you aim at determines what you see." - Jordan Peterson*
+**Two quotes:**
 
 *"The impediment to action advances action. What stands in the way becomes the way." - Marcus Aurelius*
+
+*"What you aim at determines what you see." - Jordan Peterson*
