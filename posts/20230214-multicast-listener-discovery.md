@@ -33,6 +33,6 @@ There are three types of MLD messages as designated by the "Type" field.
 > When a node ceases to listen to a multicast address on an interface, it SHOULD send a single Done message to the link-scope all-routers multicast address (FF02::2), carrying in its Multicast Address field the address to which it is ceasing to listen.
 
 ##### Further Reading:
-  - [Multicast Listener Discovery (MLD) for IPv6 - RFC 2710](https://www.rfc-editor.org/rfc/rfc2710)
-  - [Multicast Listener Discovery Version 2 (MLDv2) for IPv6 - RFC 3810](https://www.rfc-editor.org/rfc/rfc3810)
-  - [IPv6 Multicast Listener Discovery Protocol](https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-multicast/b-ip-multicast/m_ipv6-mcast-mld-xe.pdf)
+- <a href="https://www.rfc-editor.org/rfc/rfc2710" target="_blank">Multicast Listener Discovery (MLD) for IPv6 - RFC 2710</a>
+- <a href="https://www.rfc-editor.org/rfc/rfc3810" target="_blank">Multicast Listener Discovery Version 2 (MLDv2) for IPv6 - RFC 3810</a>
+- <a href="https://www.cisco.com/c/en/us/td/docs/routers/ios/config/17-x/ip-multicast/b-ip-multicast/m_ipv6-mcast-mld-xe.pdf" target="_blank">IPv6 Multicast Listener Discovery Protocol</a>
