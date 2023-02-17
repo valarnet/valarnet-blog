@@ -1,6 +1,6 @@
 ---
 title: "Passive Interface - RIP, EIGRP, OSPF"
-date: "2023-02-16"
+date: "2023-02-17"
 categories: 
   - "valarnet"
 tags: 
